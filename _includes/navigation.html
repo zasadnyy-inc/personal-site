@@ -1,0 +1,20 @@
+<nav id="menu" class="nav st-menu st-effect">
+	<div class="logo-wrapper text-center">
+        <a href="{{ "/" | prepend: site.baseurl }}">
+    		<svg class="icon icon-logo">
+    	        <use xlink:href="{{ "/img/icons/sprite.svg#icon-logo" | prepend: site.baseurl }}"></use>
+    	    </svg>
+        </a>
+    </div>
+	<h2 class="text-center">{{ site.data.vitaliy.name | append: " " | append: site.data.vitaliy.surname}}</h2>
+    <ul>
+        {% for nav in site.data.vitaliy.navigation %}
+        <li>
+            {% assign link = nav.permalink | split:"#" %}
+            <a class="nav-link {% if nav.permalink == page.permalink %}current{% endif %}" href="{% if nav.permalink != null %} {% if link[0] == page.permalink %} {{ "#" | append: link[1] }} {% else %} {{ nav.permalink | prepend: site.baseurl }} {% endif %} {% else %} {{ nav.link }} {% endif %}" {% if nav.link != null %}target="_blank" {% endif %}>{{ nav.text}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<div id="menu-trigger" class="menu-trigger"> <span></span> <span></span> <span></span> </div>

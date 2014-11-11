@@ -1,0 +1,23 @@
+.focusing {
+	h4 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 24px;
+		color: #737373;
+	}	
+	p {
+		font-size: 15px;
+		line-height: 24px;
+	}
+	.focusing-icon {
+		margin: 20px auto;
+		width: 60px;
+		height: 60px;
+		fill: #737373;
+		cursor: default;
+	}
+}
+.focusing-col {
+	margin-top: 50px;
+	padding: 0 70px;	
+}
