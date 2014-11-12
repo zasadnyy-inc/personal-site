@@ -1,6 +1,8 @@
 Vitaliy Zasadnyy's personal website (including blog)
 =============
 
+## Live demo: http://zasadnyy-inc.github.io/personal-site/
+
 ### Environment setup
 
 Install GitHub pages
