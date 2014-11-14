@@ -4,7 +4,7 @@ title: "Happy birthday!"
 date: 2014-11-12 00:01:00
 categories: dates
 post: true
-image: "happy_birthday.jpg"
+image: ""
 ---
 <img class='img-responsive' src='{{ "happy_birthday.jpg" | prepend: site.data.vitaliy.images_folder | prepend: site.baseurl }}' alt='Happy birthday!'>
 Happy birthday my brother!
