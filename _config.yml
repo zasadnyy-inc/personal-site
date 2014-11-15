@@ -6,7 +6,8 @@ safe: false
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+highlighter: pygments
+permalink: /blog/:title
 exclude: ["/automation/", "README.md", "LICENCE.txt", "CNAME"]
 
 # Site settings

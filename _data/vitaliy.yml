@@ -6,8 +6,8 @@ surname: Zasadnyy
 social:
  - {link: "https://www.linkedin.com/in/zasadnyy", icon: "linkedin", title: "zasadnyy"}
  - {link: "https://www.google.com/+VitalikZasadnyy", icon: "googleplus", title: "+VitalikZasadnyy"}
- - {link: "mailto:zasadnyy.vitalik@gmail.com", icon: "mail", title: "zasadnyy.vitalik@gmail.com"}
- - {link: "http://twitter.com/zasadnyy", icon: "twitter", title: "zasadnyy"}
+ - {link: "mailto:vitaliy@zasadnyy.com", icon: "mail", title: "vitaliy@zasadnyy.com"}
+ - {link: "http://twitter.com/zasadnyy", icon: "twitter", title: "@zasadnyy"}
  - {link: "https://www.facebook.com/zasadnyy", icon: "facebook", title: "zasadnyy"}
 
 # Social resharing
@@ -26,17 +26,22 @@ navigation:
 
 # Landing section
 welcome_text: "Hello, I'm Vitaliy"
-welcome_detail: "Mobile developer and Google Developers Group Lviv co-founder"
+welcome_detail: "Software developer. Public speaker. Community manager."
 
 # About section
-about_me: "Hi, my name is Vitaliy, I'm mobile developer and Google Developers Group Lviv co-founder. I'm interested in GameDev, Android, iOS, Google App Engine and community management. Used to work for enterprise giants like EPAM as well as for product companies such as NRavo." 
+about_me: "Hi, my name is Vitaliy, I'm mobile developer and Google Developers Group Lviv co-founder. I'm interested in GameDev, Android, iOS, wearables and community management. Used to work for enterprise giants like EPAM as well as for product companies such as NRavo." 
 
 # Focusing section
+# focusing:
+#  - {icon: "gamedev", title: "Game development", description: "Game development probably is one of the most challenging area of software engineering."}
+#  - {icon: "android", title: "Android development", description: "I create concepts of mobile applications from the scratch. That means that I draw the wireframes, prepare the user flow and consequently start to produce the concept."}
+#  - {icon: "gdg", title: "Community management", description: "Local community that connects geeks interested in Google technologies in Lviv."}
+#  - {icon: "idea", title: "Open source", description: "I love open source and everything about it to its very nature. I have contributed to several open source projects and manage a few of my own."}
 focusing:
- - {icon: "gamedev", title: "GameDev", description: "Game development probably is one of the most challenging area of software engineering."}
- - {icon: "android", title: "Android development", description: "I create concepts of mobile applications from the scratch. That means that I draw the wireframes, prepare the user flow and consequently start to produce the concept."}
- - {icon: "gdg", title: "Google Developers Group", description: "Local community that connects geeks interested in Google technologies in Lviv."}
- - {icon: "idea", title: "The World", description: "I love open source and everything about it to its very nature. I have contributed to several open source projects and manage a few of my own."}
+ - {icon: "gamedev", title: "Game development", description: ""}
+ - {icon: "android", title: "Android development", description: ""}
+ - {icon: "gdg", title: "Community management", description: ""}
+ - {icon: "idea", title: "Open source", description: ""}
 
 # Work experience
 work_experience:
