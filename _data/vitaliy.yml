@@ -18,10 +18,10 @@ facebook_image: ""
 # Navigation
 navigation:
  - {permalink: "/#home", text: "Home"}
- - {permalink: "/#about", text: "About me"}
- - {permalink: "/#focusing", text: "I’m focusing"}
- - {permalink: "/#past", text: "The past"}
- - {permalink: "/#contact", text: "Contact me"}
+ - {permalink: "/#about", text: "About me", class: "sub-nav"}
+ - {permalink: "/#focusing", text: "I’m focusing", class: "sub-nav"}
+ - {permalink: "/#past", text: "The past", class: "sub-nav"}
+ - {permalink: "/#contact", text: "Contact me", class: "sub-nav"}
  - {permalink: "/blog/", text: "Blog"}
 
 # Landing section

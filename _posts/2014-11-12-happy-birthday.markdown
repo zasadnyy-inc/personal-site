@@ -2,7 +2,7 @@
 layout: blog
 title: "Happy birthday!"
 date: 2014-11-12 00:01:00
-categories: dates
+categories: dates birthday happy
 post: true
 image: ""
 ---

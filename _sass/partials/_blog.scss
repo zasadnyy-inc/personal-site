@@ -2,6 +2,7 @@
 	margin-bottom: 60px;
 	img {
 		margin: 20px auto;	
+		max-height: 500px;
 	}
 }
 .post-title {
@@ -12,6 +13,11 @@
 .post-metadata {
 	font-size: 16px;
 }
+.post-date {
+	color: #838383;
+	font-size: 14px;
+	text-transform: uppercase;
+}
 .post-content {
 	margin-top: 15px;
 	letter-spacing: 1px;
@@ -19,4 +25,12 @@
 .post-read-more {
 	margin-top: 10px;
 	display: block;
+}
+.post-categories {
+	padding: 0;
+	list-style: none;
+	li {
+		display: inline-block;
+		margin-left: 5px;
+	}
 }
