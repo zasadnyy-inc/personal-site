@@ -4,6 +4,7 @@ gems:
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
 permalink: /blog/:title
 exclude: ["/automation/", "README.md", "LICENCE.txt", "CNAME"]
 
