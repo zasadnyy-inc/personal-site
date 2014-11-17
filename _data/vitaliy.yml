@@ -18,10 +18,10 @@ facebook_image: ""
 # Navigation
 navigation:
  - {permalink: "/#home", text: "Home"}
- - {permalink: "/#about", text: "About me", class: "sub-nav"}
- - {permalink: "/#focusing", text: "I’m focusing", class: "sub-nav"}
- - {permalink: "/#past", text: "The past", class: "sub-nav"}
- - {permalink: "/#contact", text: "Contact me", class: "sub-nav"}
+ - {permalink: "/#about", text: "About me", class: "sub-nav", major: "/"}
+ - {permalink: "/#focusing", text: "I’m focusing", class: "sub-nav", major: "/"}
+ - {permalink: "/#past", text: "The past", class: "sub-nav", major: "/"}
+ - {permalink: "/#contact", text: "Contact me", class: "sub-nav", major: "/"}
  - {permalink: "/blog/", text: "Blog"}
 
 # Landing section
