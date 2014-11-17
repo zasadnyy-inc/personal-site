@@ -9,10 +9,21 @@
 	<h2 class="text-center">{{ site.data.vitaliy.name | append: " " | append: site.data.vitaliy.surname}}</h2>
     <ul>
         {% for nav in site.data.vitaliy.navigation %}
-        <li>
-            {% assign link = nav.permalink | split:"#" %}
-            <a class="nav-link {% if nav.permalink == page.permalink %}current{% endif %}" href="{% if nav.permalink != null %} {% if link[0] == page.permalink %} {{ "#" | append: link[1] }} {% else %} {{ nav.permalink | prepend: site.baseurl }} {% endif %} {% else %} {{ nav.link }} {% endif %}" {% if nav.link != null %}target="_blank" {% endif %}>{{ nav.text}}</a>
-        </li>
+            {% if nav.major == null or nav.major == page.permalink %}
+            <li>
+                {% assign link = nav.permalink | split:"#" %}
+                {% if nav.permalink %} 
+                    {% if link[0] == page.permalink %} 
+                        {% assign navlink = "#" | append: link[1] %}
+                    {% else %} 
+                        {% assign navlink = nav.permalink | prepend: site.baseurl %}
+                    {% endif %}
+                {% else %} 
+                    {% assign navlink = nav.link %}
+                {% endif %}
+                <a class="nav-link {% if nav.permalink == page.permalink or navlink == "#home" and page.permalink == "/" %}current{% endif %} {{ nav.class }}" href="{{ navlink }}" {% if nav.link %}target="_blank"{% endif %}>{{ nav.text}}</a>
+            </li>
+            {% endif %}
         {% endfor %}
     </ul>
 </nav>
