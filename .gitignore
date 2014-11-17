@@ -3,3 +3,4 @@ _site
 _sass/.sass-cache
 Thumbs.db
 ehthumbs.db
+.code-highlighter-cache

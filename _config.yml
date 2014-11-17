@@ -1,6 +1,7 @@
 # Plugins
 gems:
 - jekyll-sitemap
+- octopress-codefence
 
 safe: false
 

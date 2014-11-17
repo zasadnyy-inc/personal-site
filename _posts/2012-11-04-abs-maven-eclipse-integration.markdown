@@ -34,7 +34,7 @@ If you'll use eclipse for a development, you'll also need:
 
 At first lets create android project using akquinet [android-archetypes](https://github.com/akquinet/android-archetypes). In result we'll get sample project with configured release targets and integration tests project. Copy to terminal following code, replacing highligted lines with your values:
 
-{% highlight bash linenos=table %}
+```bash mark:2-4 title:"Testing codefence"
 mvn archetype:generate \
  -DarchetypeArtifactId=android-release \
  -DarchetypeGroupId=de.akquinet.android.archetypes \
@@ -43,7 +43,7 @@ mvn archetype:generate \
  -DartifactId=my-android-project \
  -Dpackage=com.foo.bar.test \
  -Dplatform=16
-{% endhighlight %}
+```
 
 Once generated, the application is ready to be built and tested. Start an android emulator, or plug an Android dev phone, and execute:
 
