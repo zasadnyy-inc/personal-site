@@ -2,6 +2,7 @@
 gems:
 - jekyll-sitemap
 - octopress-codefence
+- octopress-include-tag
 
 safe: false
 
