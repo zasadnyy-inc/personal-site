@@ -1,0 +1,90 @@
+.nav {
+    padding-bottom: 60px;
+    position: fixed;
+    width: 256px;
+    height: 100%;
+    z-index: 7;
+    background: #262626;
+    visibility: visible;
+    overflow: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translate(-100%, 0);
+    transition: transform .6s;
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    h2 {
+        font-size: 22px;
+        font-weight: 300;
+    }
+    ul {
+        margin: 40px 0 0;
+        padding: 0;
+        line-height: 20px;
+        width: 95%;
+    }
+    li {
+        display: block;
+        transform: translateX(-500px);
+        transition: transform .8s;
+        transition-timing-function: cubic-bezier(.7, 0, .3, 1);     
+        &:nth-child(2) {
+            transform: translateX(-1000px);
+        }
+        &:nth-child(3) {
+            transform: translateX(-1500px);
+        }
+        &:nth-child(4) {
+            transform: translateX(-2000px);
+        }
+        &:nth-child(5) {
+            transform: translateX(-2500px);
+        }
+        &:nth-child(6) {
+            transform: translateX(-3000px);
+        }
+    }
+    .nav-link {
+        padding: 13px 0 13px 35px;
+        display: block;
+        color: #7f7f7f;
+        outline: 0;
+        font-size: 16px;
+        transition: transform .8s, color .8s;
+        &.current {
+            color: #cccccc;    
+            &:hover {
+                transform: translateX(0);
+            }
+        }
+        &:hover {
+            @extend .current;
+            transform: translateX(10px);
+        }
+        &.sub-nav {
+            padding-left: 55px;
+        }
+    }
+    .st-menu-open & {
+        transform: translate(0);
+        li {
+            transform: translate(0);  
+        }
+    }
+    .logo-wrapper {
+        margin: 65px auto 30px;
+    }
+    .icon-logo {
+        width: 70px;
+        height: 70px;
+        fill: #666666;
+    }
+    .blog-container & {
+        background: #f5f5f5;
+        .nav-link {
+            color: #666666;
+            &:hover, &.current {
+                color: #0D0D0D;
+            }
+        }
+    }
+}

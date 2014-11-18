@@ -1,0 +1,15 @@
+.footer {
+	background: #ececec;
+	.social-links {
+		padding: 0;
+	}
+	.social-link {
+		display: inline-block;
+		list-style: none;
+		.icon {
+			width: 36px;
+			height: 36px;
+			margin: 0 12px;
+		}
+	}
+}
