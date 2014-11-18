@@ -4,3 +4,4 @@ _sass/.sass-cache
 Thumbs.db
 ehthumbs.db
 .code-highlighter-cache
+_deploy.yml
