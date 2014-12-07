@@ -5,20 +5,9 @@
     <description>Hi, my name is Vitaliy, I&#39;m mobile developer and Google Developers Group Lviv co-founder. I&#39;m interested in GameDev, Android, iOS, Google App Engine and community management. Used to work for enterprise giants like EPAM as well as for product companies such as NRavo.</description>
     <link>http://zasadnyy-inc.github.io/personal-site/</link>
     <atom:link href="http://zasadnyy-inc.github.io/personal-site/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 07 Dec 2014 21:16:34 +0200</pubDate>
-    <lastBuildDate>Sun, 07 Dec 2014 21:16:34 +0200</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 01:23:10 +0200</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 01:23:10 +0200</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
-    
-      <item>
-        <title>Test123</title>
-        <description>
-</description>
-        <pubDate>Mon, 17 Nov 2014 23:52:14 +0200</pubDate>
-        <link>http://zasadnyy-inc.github.io/personal-site/blog/test123</link>
-        <guid isPermaLink="true">http://zasadnyy-inc.github.io/personal-site/blog/test123</guid>
-        
-        
-      </item>
     
       <item>
         <title>Happy birthday!</title>
@@ -63,7 +52,7 @@ In a result we’ll get project with:&lt;/p&gt;
 &lt;p&gt;At first lets create empty Android mvn project. In order to compleate this steap we’ll need:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk7u9-downloads-1859576.html&quot;&gt;JDK 1.6+&lt;/a&gt;installed as required for Android development&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk7u9-downloads-1859576.html&quot;&gt;JDK 1.6+&lt;/a&gt; installed as required for Android development&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://developer.android.com/intl/ru/sdk/index.html&quot;&gt;Android SDK&lt;/a&gt; installed r17+ , preferably with all platforms&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://maven.apache.org/download.html&quot;&gt;Maven 3.0.3+&lt;/a&gt; installed&lt;/li&gt;
 &lt;/ul&gt;
