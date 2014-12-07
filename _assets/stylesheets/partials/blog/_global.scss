@@ -1,4 +1,4 @@
-body, html {
+body {
     font-family: $fixed-font-family, $base-font-family;
     font-size: $base-font-size;
     font-weight: $base-font-weight;
@@ -18,7 +18,7 @@ b, strong {
 }
 a {
     @include linkColor($main-color);
-    &:hover {
+    &:hover, &:active, &:focus {
         text-decoration: none;
     }
 }

@@ -18,8 +18,10 @@ layout: compress
         </div>
     </div>
 
-    <div class="container">
-        {{ content }}
+    <div class="container blog-container">
+        <div class="row">
+            {{ content }}
+        </div>
     </div>
 
     <div class="container-fluid footer-container">
@@ -27,22 +29,9 @@ layout: compress
     </div>
 
     {% include analytics.html %}
-    <script type="text/javascript">
-        WebFontConfig = {
-            google: {
-                families: ['Roboto:500,300:latin']
-            }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
+
+    {% include webfont.html %}
+    
 </body>
 
 </html>

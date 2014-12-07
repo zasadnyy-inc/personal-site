@@ -1,5 +1,9 @@
 .footer-container {
 	background: $header-color;
+	margin-top: 120px;
+	@media (max-width: 767px) {
+        margin-top: 60px;
+    }
 }
 .footer {
 	padding: 70px 15px 30px;

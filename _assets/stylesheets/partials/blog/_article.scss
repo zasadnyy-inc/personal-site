@@ -1,9 +1,5 @@
 .article {
 	float: none;
-	padding-bottom: 120px;
-	@media (max-width: 767px) {
-        padding-bottom: 60px;
-    }
 	img {
 		margin: 30px auto;
 		@extend .img-responsive;

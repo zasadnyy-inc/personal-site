@@ -29,8 +29,13 @@ layout: compress
             <div class="article-meta col-md-5 col-xs-12">
                 <ul>
                     <li>
+                        {% if page.updated %}
+                        <span class="name">Last updated:</span>
+                        <span class="value" itemprop="dateModified" content="{{ page.updated | date: "%Y-%m-%d" }}">{{ page.updated | date: "%B %-d, %Y" }}</span>
+                        {% else %}
                         <span class="name">Date published:</span>
                         <span class="value" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</span>
+                        {% endif %}
                     </li>
                     <li>
                         <span class="name">Est. Read Time:</span>
@@ -90,22 +95,9 @@ layout: compress
     </div>
 
     {% include analytics.html %}
-    <script type="text/javascript">
-        WebFontConfig = {
-            google: {
-                families: ['Roboto:500,300:latin']
-            }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
+    
+    {% include webfont.html %}
+    
 </body>
 
 </html>
