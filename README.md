@@ -21,3 +21,20 @@ Start site with command
 ```
 
 **Note:** Also you need to install [Node.js](http://nodejs.org/download/)
+
+#### Image optimization
+
+Install [Grunt](http://gruntjs.com/getting-started)
+```bash
+	npm install -g grunt-cli
+```
+
+Run from root folder
+```bash
+	npm install
+```
+
+Then
+```bash
+	grunt
+```

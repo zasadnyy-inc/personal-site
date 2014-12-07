@@ -26,7 +26,7 @@ This is my first post, so don't be too critical :)
 
 At first lets create empty Android mvn project. In order to compleate this steap we'll need:
 
-- [JDK 1.6+](http://www.oracle.com/technetwork/java/javase/downloads/jdk7u9-downloads-1859576.html)installed as required for Android development
+- [JDK 1.6+](http://www.oracle.com/technetwork/java/javase/downloads/jdk7u9-downloads-1859576.html) installed as required for Android development
 - [Android SDK](http://developer.android.com/intl/ru/sdk/index.html) installed r17+ , preferably with all platforms
 - [Maven 3.0.3+](http://maven.apache.org/download.html) installed
 

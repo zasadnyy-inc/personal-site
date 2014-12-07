@@ -16,7 +16,7 @@ safe: false
 markdown: kramdown
 highlighter: false
 permalink: /blog/:title
-exclude: ["README.md", "LICENSE", "CNAME", "autoprefixer.yml", "Gemfile.lock", "Gemfile"]
+exclude: ["README.md", "LICENSE", "CNAME", "autoprefixer.yml", "Gemfile.lock", "Gemfile", "package.json", "Gruntfile.js", "node_modules/"]
 
 # Site settings
 title: "Vitaliy Zasadnyy"

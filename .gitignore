@@ -6,3 +6,4 @@ ehthumbs.db
 .code-highlighter-cache
 .jekyll-assets-cache
 _deploy.yml
+node_modules

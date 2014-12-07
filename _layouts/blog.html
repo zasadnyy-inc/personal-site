@@ -8,23 +8,41 @@ layout: compress
 {% include blog/head.html %}
 
 <body>
-    <div id="st-container" class="container-fluid st-container blog">
-
+    <div class="container">
         {% include blog/navigation.html %}
+    </div>
 
-        <div class="st-pusher">
-            <div class="st-content">
-                	{{ content }}
-
-                <div class="col-md-12 text-center">
-                     <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">via RSS</a></p>
-                </div>
-
-            </div>
+    <div class="article-header container-fluid">
+        <div class="container">
+            <h1 class="article-title" itemprop="name">{{ page.title }}</h1>
         </div>
     </div>
-    
+
+    <div class="container">
+        {{ content }}
+    </div>
+
+    <div class="container-fluid footer-container">
+        {% include blog/footer.html %}
+    </div>
+
     {% include analytics.html %}
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: {
+                families: ['Roboto:500,300:latin']
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
 </body>
 
 </html>
