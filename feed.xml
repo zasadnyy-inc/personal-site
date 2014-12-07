@@ -5,8 +5,8 @@
     <description>Hi, my name is Vitaliy, I&#39;m mobile developer and Google Developers Group Lviv co-founder. I&#39;m interested in GameDev, Android, iOS, Google App Engine and community management. Used to work for enterprise giants like EPAM as well as for product companies such as NRavo.</description>
     <link>http://zasadnyy-inc.github.io/personal-site/</link>
     <atom:link href="http://zasadnyy-inc.github.io/personal-site/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 05 Dec 2014 13:31:23 +0200</pubDate>
-    <lastBuildDate>Fri, 05 Dec 2014 13:31:23 +0200</lastBuildDate>
+    <pubDate>Sun, 07 Dec 2014 20:34:23 +0200</pubDate>
+    <lastBuildDate>Sun, 07 Dec 2014 20:34:23 +0200</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -76,29 +76,29 @@ In a result we’ll get project with:&lt;/p&gt;
 
 &lt;p&gt;At first lets create android project using akquinet &lt;a href=&quot;https://github.com/akquinet/android-archetypes&quot;&gt;android-archetypes&lt;/a&gt;. In result we’ll get sample project with configured release targets and integration tests project. Copy to terminal following code, replacing highligted lines with your values:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mvn archetype:generate \
- -DarchetypeArtifactId=android-release \
- -DarchetypeGroupId=de.akquinet.android.archetypes \
- -DarchetypeVersion=1.0.8 \
- -DgroupId=com.foo.bar \
- -DartifactId=my-android-project \
- -Dpackage=com.foo.bar.test \
- -Dplatform=16&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;Testing codefence&lt;/span&gt;&lt;a class=&quot;code-highlight-caption-link&quot; href=&quot;https://github.com/octopress/codefence&quot;&gt;plugin link&lt;/a&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn archetype:generate &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeArtifactId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;android-release &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeGroupId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;de.akquinet.android.archetypes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeVersion&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.0.8 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DgroupId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;com.foo.bar &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DartifactId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;my-android-project &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -Dpackage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;com.foo.bar.test &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -Dplatform&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;16&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Once generated, the application is ready to be built and tested. Start an android emulator, or plug an Android dev phone, and execute:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cd my-android-project
-mvn clean install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;my-android-project
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn clean install&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Besides your application this commands will also install and execute integrations tests application.&lt;/p&gt;
 
 &lt;p&gt;Generated project goes with test keystore that could be used for test, but not for deploying to market, execute this command to get signed apk:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mvn clean install -Prelease \
--Dsign.keystore=PATH_OF_THE_PROJECT/my-android-project/test-key.keystore \
--Dsign.alias=mykey \
--Dsign.storepass=testtest \
--Dsign.keypass=testtest&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn clean install -Prelease &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;-Dsign.keystore&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PATH_OF_THE_PROJECT/my-android-project/test-key.keystore &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;-Dsign.alias&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mykey &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;-Dsign.storepass&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;testtest &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;-Dsign.keypass&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;testtest&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now we need to download and add to our project dependencies &lt;a href=&quot;http://actionbarsherlock.com/&quot;&gt;ActionbarBarSherlock&lt;/a&gt;.&lt;/p&gt;
 
@@ -106,79 +106,78 @@ mvn clean install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-xcB5pGCi7dY/UJZ_tfwiHhI/AAAAAAAAEGY/CMAXMVj8vCU/s1600/skitch+(6).png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;As it is stated on &lt;a href=&quot;http://actionbarsherlock.com/usage.html&quot;&gt;abs usage page&lt;/a&gt; the only thing we need - is to add this lines to &lt;code&gt;my-android-project/my-android-project/pom.xml&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;As it is stated on &lt;a href=&quot;http://actionbarsherlock.com/usage.html&quot;&gt;abs usage page&lt;/a&gt; the only thing we need - is to add this lines to &lt;code&gt;my-android-project/my-android-project/pom.xml&lt;/code&gt; :&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&amp;lt;dependency&amp;gt;
-  &amp;lt;groupId&amp;gt;com.actionbarsherlock&amp;lt;/groupId&amp;gt;
-  &amp;lt;artifactId&amp;gt;actionbarsherlock&amp;lt;/artifactId&amp;gt;
-  &amp;lt;version&amp;gt;4.2.0&amp;lt;/version&amp;gt;
-  &amp;lt;type&amp;gt;apklib&amp;lt;/type&amp;gt;
-&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.actionbarsherlock&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;actionbarsherlock&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;4.2.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;apklib&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Also you need to extend &lt;code&gt;HelloAndroidActivity&lt;/code&gt; from &lt;code&gt;com.actionbarsherlock.app.SherlockActivity&lt;/code&gt; instead of &lt;code&gt;android.app.Activity&lt;/code&gt; and change activity theme in &lt;code&gt;AndroidManifest.xml&lt;/code&gt; to &lt;code&gt;android:theme=&quot;@style/Theme.Sherlock&quot;&lt;/code&gt;. Checkout &lt;a href=&quot;https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/patch.diff&quot;&gt;git patch file&lt;/a&gt; for details. Try to build app. From parent project folder execute:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mvn clean install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn clean install&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;You’ll get following error: &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;[INFO] UNEXPECTED TOP-LEVEL EXCEPTION:
-[INFO] java.lang.IllegalArgumentException: already added: Landroid/support/v4/app/Watson$OnCreateOptionsMenuListener;
-[INFO]  at com.android.dx.dex.file.ClassDefsSection.add(ClassDefsSection.java:123)
-[INFO]  at com.android.dx.dex.file.DexFile.add(DexFile.java:163)
-[INFO]  at com.android.dx.command.dexer.Main.processClass(Main.java:486)
-[INFO]  at com.android.dx.command.dexer.Main.processFileBytes(Main.java:455)
-[INFO]  at com.android.dx.command.dexer.Main.access$400(Main.java:67)
-[INFO]  at com.android.dx.command.dexer.Main$1.processFileBytes(Main.java:394)
-[INFO]  at com.android.dx.cf.direct.ClassPathOpener.processArchive(ClassPathOpener.java:245)
-[INFO]  at com.android.dx.cf.direct.ClassPathOpener.processOne(ClassPathOpener.java:131)
-[INFO]  at com.android.dx.cf.direct.ClassPathOpener.process(ClassPathOpener.java:109)
-[INFO]  at com.android.dx.command.dexer.Main.processOne(Main.java:418)
-[INFO]  at com.android.dx.command.dexer.Main.processAllFiles(Main.java:329)
-[INFO]  at com.android.dx.command.dexer.Main.run(Main.java:206)
-[INFO]  at com.android.dx.command.dexer.Main.main(Main.java:174)
-[INFO]  at com.android.dx.command.Main.main(Main.java:91)
-[INFO] 1 error; aborting
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary:
-[INFO] 
-[INFO] my-android-project - Parent ....................... SUCCESS [0.394s]
-[INFO] my-android-project - Application .................. SUCCESS [14.880s]
-[INFO] my-android-project-it - Integration tests ......... FAILURE [9.501s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 21.255s
-[INFO] Finished at: Sun Nov 04 12:50:51 GMT+02:00 2012
-[INFO] Final Memory: 15M/81M
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal com.jayway.maven.plugins.android.generation2:android-maven-plugin:3.1.1:dex (default-dex) on project my-android-project-it: MojoExecutionException: ANDROID-040-001: Could not execute: Command = /bin/sh -c cd /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it &amp;amp;&amp;amp; /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output=/Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project/target/my-android-project-1.0-SNAPSHOT.jar /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar, Result = 1 -&amp;gt; [Help 1]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] UNEXPECTED TOP-LEVEL EXCEPTION:
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] java.lang.IllegalArgumentException: already added: Landroid/support/v4/app/Watson&lt;span class=&quot;nv&quot;&gt;$OnCreateOptionsMenuListener&lt;/span&gt;;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.dex.file.ClassDefsSection.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ClassDefsSection.java:123&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.dex.file.DexFile.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;DexFile.java:163&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.processClass&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:486&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.processFileBytes&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:455&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.access&lt;span class=&quot;nv&quot;&gt;$400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:67&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;.processFileBytes&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:394&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.cf.direct.ClassPathOpener.processArchive&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ClassPathOpener.java:245&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.cf.direct.ClassPathOpener.processOne&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ClassPathOpener.java:131&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.cf.direct.ClassPathOpener.process&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ClassPathOpener.java:109&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.processOne&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:418&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.processAllFiles&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:329&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:206&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;15&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.dexer.Main.main&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:174&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;16&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO]  at com.android.dx.command.Main.main&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Main.java:91&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;17&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] 1 error; aborting
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;18&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] ------------------------------------------------------------------------
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;19&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] Reactor Summary:
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;20&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] 
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;21&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] my-android-project - Parent ....................... SUCCESS &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0.394s]
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;22&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] my-android-project - Application .................. SUCCESS &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14.880s]
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;23&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] my-android-project-it - Integration tests ......... FAILURE &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;9.501s]
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;24&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] ------------------------------------------------------------------------
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;25&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] BUILD FAILURE
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;26&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] ------------------------------------------------------------------------
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;27&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] Total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 21.255s
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;28&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] Finished at: Sun Nov 04 12:50:51 GMT+02:00 2012
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;29&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] Final Memory: 15M/81M
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;30&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;INFO] ------------------------------------------------------------------------
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;31&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ERROR] Failed to execute goal com.jayway.maven.plugins.android.generation2:android-maven-plugin:3.1.1:dex &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default-dex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; on project my-android-project-it: MojoExecutionException: ANDROID-040-001: Could not execute: Command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /bin/sh -c &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project/target/my-android-project-1.0-SNAPSHOT.jar /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar, Result &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1 -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Help 1]&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;If you carefully take a look to the last error you’ll notice that problem is with &lt;code&gt;generation2&lt;/code&gt; goal, it uses dex tool from Android SDK to generate class files for Dalvik, during execution it include &lt;code&gt;actionbarsherlock&lt;/code&gt; and &lt;code&gt;support-v4-r7&lt;/code&gt; dependencies two times (second time like transitive dependency from our application project), checkout  it &lt;code&gt;--output&lt;/code&gt; parameter values (here is a bit formatted text from maven error):&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output=
-  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex 
-  /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib
-  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project/target/my-android-project-1.0-SNAPSHOT.jar
-  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes 
-  /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar 
-  /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex 
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project/target/my-android-project-1.0-SNAPSHOT.jar
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes 
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar 
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;We can fix this error by adding &lt;code&gt;actionbarsherlock&lt;/code&gt; and &lt;code&gt;support-v4-r7&lt;/code&gt; dependencies with scope provided to &lt;code&gt;my-android-project-it/pom.xml&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&amp;lt;dependency&amp;gt;
-  &amp;lt;groupId&amp;gt;com.google.android&amp;lt;/groupId&amp;gt;
-  &amp;lt;artifactId&amp;gt;support-v4&amp;lt;/artifactId&amp;gt;
-  &amp;lt;version&amp;gt;r7&amp;lt;/version&amp;gt;
-  &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
-&amp;lt;/dependency&amp;gt;
- 
- &amp;lt;dependency&amp;gt;
-   &amp;lt;groupId&amp;gt;com.actionbarsherlock&amp;lt;/groupId&amp;gt;
-   &amp;lt;artifactId&amp;gt;actionbarsherlock&amp;lt;/artifactId&amp;gt;
-   &amp;lt;version&amp;gt;4.2.0&amp;lt;/version&amp;gt;
-   &amp;lt;type&amp;gt;apklib&amp;lt;/type&amp;gt;
-   &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
-&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.google.android&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;support-v4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;r7&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.actionbarsherlock&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;actionbarsherlock&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;4.2.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;apklib&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now project should build successfully.&lt;/p&gt;
 
@@ -207,12 +206,12 @@ mvn clean install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In console view you’ll find error like this one:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;[2012-11-04 14:22:26 - my-android-project] Conversion to Dalvik format failed with error 1
-[2012-11-04 14:23:55 - my-android-project] Dx 
-UNEXPECTED TOP-LEVEL EXCEPTION:
-java.lang.IllegalArgumentException: already added: Lorg/hamcrest/BaseDescription;
-[2012-11-04 14:23:55 - my-android-project] Dx  at com.android.dx.dex.file.ClassDefsSection.add(ClassDefsSection.java:123)
-[2012-11-04 14:23:55 - my-android-project] Dx  at com.android.dx.dex.file.DexFile.add(DexFile.java:163)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2012-11-04 14:22:26 - my-android-project] Conversion to Dalvik format failed with error 1
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2012-11-04 14:23:55 - my-android-project] Dx 
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;UNEXPECTED TOP-LEVEL EXCEPTION:
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;java.lang.IllegalArgumentException: already added: Lorg/hamcrest/BaseDescription;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2012-11-04 14:23:55 - my-android-project] Dx  at com.android.dx.dex.file.ClassDefsSection.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ClassDefsSection.java:123&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2012-11-04 14:23:55 - my-android-project] Dx  at com.android.dx.dex.file.DexFile.add&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;DexFile.java:163&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Remember our problem with maven configuration? Here we have quite the same issue with double inclusion. In order to fix it remove libs folder with &lt;code&gt;android-support-v4.jar&lt;/code&gt; from &lt;code&gt;actionbarsherlock&lt;/code&gt; project.&lt;/p&gt;
 
@@ -232,6 +231,8 @@ java.lang.IllegalArgumentException: already added: Lorg/hamcrest/BaseDescription
         
         
         <category>android</category>
+        
+        <category>google</category>
         
       </item>
     
