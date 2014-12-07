@@ -1,0 +1,23 @@
+$solar-base03:        $header-color;
+$solar-base02:        $sub-text-color;
+$solar-base01:        rgba(#ffffff, .25);
+$solar-base00:        #657b83;
+$solar-base0:         #839496;
+$solar-base1:         #ffffff;
+$solar-base2:         #f2f2f2;
+$solar-base3:         #ffffff;
+$solar-yellow:        #b58900;
+$solar-orange:        #cb4b16;
+$solar-red:           #dc322f;
+$solar-magenta:       #d33682;
+$solar-violet:        #6c71c4;
+$solar-blue:          #268bd2;
+$solar-cyan:          #2aa198;
+$solar-green:         #859900;
+
+$pre-marker:              rgba(#ffffff, .5) !default;
+$pre-marker-border:       rgba($pre-marker, .13) !default;
+$pre-marker-border-left:  $main-color;
+
+$code-bg:                 rgba(#fff, .3);
+$code-border:             rgba(#000, .1);

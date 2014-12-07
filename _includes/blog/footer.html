@@ -1,0 +1,18 @@
+<footer class="footer container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="hidden-xs">About</h4>
+            <div class="author-photo flow-img img-circle" style="background-image: url({{ "/img/vitaliy/photo.jpg" | prepend: site.baseurl }})"></div>
+            <p class="author-about">{{ site.data.vitaliy.about_me }}</p>
+        </div>
+        <div class="get-in-touch col-md-4 col-md-offset-1">
+            <h4 class="hidden-xs">Get in touch</h4>
+            <p class="author-social">{{ site.data.vitaliy.get_in_touch }}</p>
+            <p class="subscribe">Subscribe with <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>.</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="license text-center">
+            <i>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License.</i>
+        </div>
+    </div>
+</footer>

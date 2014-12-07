@@ -4,4 +4,5 @@ _sass/.sass-cache
 Thumbs.db
 ehthumbs.db
 .code-highlighter-cache
+.jekyll-assets-cache
 _deploy.yml

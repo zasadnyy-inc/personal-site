@@ -1,0 +1,70 @@
+.hiding {
+    opacity: 0;
+}
+.visible {
+    opacity: 1;
+}
+.image-section {
+    color: #fff;
+    font-weight: $light;
+    background-repeat: no-repeat;
+    background-position: center center !important;
+    background-size: cover !important;
+}
+.full-screen {
+    height: 100%; 
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &.solid-black {
+        background: rgba(37, 32, 31, .8);   
+    }
+    &.solid-white {
+        background: rgba(255, 255, 255, .9);
+    }
+    &.gradient-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .32) 0%, rgba(0, 0, 0, 0) 32%, rgba(0, 0, 0, .64) 100%);
+    }
+}
+.flow-img {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.horizontal-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+.dash {
+    height: 1px;
+    width: 30px;
+    background: #d3d3d3;
+    margin: 20px auto;
+}

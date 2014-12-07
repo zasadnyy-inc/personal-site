@@ -1,0 +1,35 @@
+// Font weights
+$light: 100;
+$regular: 300;
+$bold: 500;
+
+// Base Font
+$base-font-family: sans-serif;
+$fixed-font-family: 'Roboto';
+$base-font-weight: $regular;
+$base-font-size: 20px;
+$base-line-height: 28px;
+
+// Headings
+$header-font-weight: $bold;
+$h1-font-size: 3.2 * $base-font-size;
+$h2-font-size: 2.8 * $base-font-size;
+$h3-font-size: 2.4 * $base-font-size;
+$h4-font-size: 2 * $base-font-size;
+$h5-font-size: 1.6 * $base-font-size;
+$h6-font-size: 1.2 * $base-font-size;
+
+// Colors
+$main-color: #FF9900;
+$sub-color: #FFB240;
+$header-color: #333333;
+$text-color: #666666;
+$sub-text-color: #999999;
+$icon-fill-color: $text-color;
+$link-lighten-amount: 20%;
+
+// Path
+$image-dir: "../img";
+$sprites-dir: $image-dir + "/sprites";
+
+@import "modules/all";

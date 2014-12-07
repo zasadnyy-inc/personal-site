@@ -2,15 +2,21 @@
 gems:
 - jekyll-sitemap
 - octopress-codefence
-- octopress-include-tag
+
+# Jekyll assets
+assets:
+  baseurl: /personal-site/assets
+  js_compressor: uglifier
+  css_compressor: sass
+  cache: true
 
 safe: false
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: false
 permalink: /blog/:title
-exclude: ["/automation/", "README.md", "LICENCE.txt", "CNAME"]
+exclude: ["README.md", "LICENSE", "CNAME", "autoprefixer.yml", "Gemfile.lock", "Gemfile"]
 
 # Site settings
 title: "Vitaliy Zasadnyy"

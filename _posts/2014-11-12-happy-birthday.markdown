@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: "Happy birthday!"
 date: 2014-11-12 00:01:00
 categories: dates birthday happy

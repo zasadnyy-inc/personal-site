@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "octopress"
+gem "jekyll-assets"
+gem "jekyll-sitemap"
+gem "octopress-codefence"
+gem "uglifier"
+gem "autoprefixer-rails"
+gem "bootstrap-sass"
+gem "rouge"

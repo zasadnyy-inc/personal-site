@@ -1,0 +1,111 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en" itemscope="" itemtype="http://schema.org/Article">
+
+{% include blog/head.html %}
+
+<body>
+    <div class="container">
+        {% include blog/navigation.html %}
+    </div>
+
+    <div class="article-header container-fluid">
+        <div class="container">
+            <h1 class="article-title" itemprop="name">{{ page.title }}</h1>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="article-description" itemprop="description">{{ page.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="article-meta col-md-5 col-xs-12">
+                <ul>
+                    <li>
+                        <span class="name">Date published:</span>
+                        <span class="value" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</span>
+                    </li>
+                    <li>
+                        <span class="name">Est. Read Time:</span>
+                        <span class="value">{{ page.estimate }}</span>
+                    </li>
+                    <li>
+                        <span class="name">Share with:</span>
+                        {% assign articleUrl = page.url | prepend: site.baseurl | prepend: site.url %} 
+                        <span class="value">
+                            <a href="#" onclick="window.open('https://plus.google.com/share?url={{ articleUrl }}', 'newwindow', 'width=600, height=500'); return false;">Google+</a>
+                        </span>
+                        <span>&#8226;</span>
+                        <span class="value">
+                            <a href="#" onclick="window.open('https://twitter.com/home?status={{ articleUrl }}', 'newwindow', 'width=600, height=250'); return false;">Twitter</a>
+                        </span>
+                        <span>&#8226;</span>
+                        <span class="value">
+                            <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ articleUrl }}', 'newwindow', 'width=600, height=500'); return false;">Facebook</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="name">Tags:</span>
+                        <span class="value">
+                            {% for category in page.categories %}
+                            #{{ category }}{% if forloop.index < forloop.length %}, {% endif %}
+                            {% endfor %}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <article class="article col-md-9" itemprop="articleBody">
+                {{ content }}
+
+                <hr>
+                Share with:
+                <span class="value">
+                    <a href="#" onclick="window.open('https://plus.google.com/share?url={{ articleUrl }}', 'newwindow', 'width=600, height=500'); return false;">Google+</a>
+                </span>
+                <span>&#8226;</span>
+                <span class="value">
+                    <a href="#" onclick="window.open('https://twitter.com/home?status={{ articleUrl }}', 'newwindow', 'width=600, height=250'); return false;">Twitter</a>
+                </span>
+                <span>&#8226;</span>
+                <span class="value">
+                    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ articleUrl }}', 'newwindow', 'width=600, height=500'); return false;">Facebook</a>
+                </span>
+            </article>
+
+            {% include disqus-comments.html %}
+
+        </div>
+    </div>
+
+    <div class="container-fluid footer-container">
+        {% include blog/footer.html %}
+    </div>
+
+    {% include analytics.html %}
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: {
+                families: ['Roboto:500,300:latin']
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+</body>
+
+</html>

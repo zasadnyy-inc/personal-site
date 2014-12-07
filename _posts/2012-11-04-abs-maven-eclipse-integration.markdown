@@ -1,9 +1,13 @@
 ---
-layout: blog
+layout: article
 title: "Action Bar Sherlock, Maven, eclipse integration"
+author: "Vitaliy Zasadnyy"
+description: "Some short description"
 date: 2012-11-04 00:01:00
-categories: android
+estimate: "10 mins"
+categories: android google
 post: true
+theme_color: "#21e034"
 image: ""
 ---
 
@@ -34,7 +38,7 @@ If you'll use eclipse for a development, you'll also need:
 
 At first lets create android project using akquinet [android-archetypes](https://github.com/akquinet/android-archetypes). In result we'll get sample project with configured release targets and integration tests project. Copy to terminal following code, replacing highligted lines with your values:
 
-```bash mark:2-4 title:"Testing codefence"
+```shell mark:2-4 title:"Testing codefence" url:"https://github.com/octopress/codefence" link_text:"plugin link"
 mvn archetype:generate \
  -DarchetypeArtifactId=android-release \
  -DarchetypeGroupId=de.akquinet.android.archetypes \
@@ -47,23 +51,23 @@ mvn archetype:generate \
 
 Once generated, the application is ready to be built and tested. Start an android emulator, or plug an Android dev phone, and execute:
 
-{% highlight bash linenos=table %}
+```shell
 cd my-android-project
 mvn clean install
-{% endhighlight %}
+```
 
 Besides your application this commands will also install and execute integrations tests application.
 
 
 Generated project goes with test keystore that could be used for test, but not for deploying to market, execute this command to get signed apk:
 
-{% highlight bash linenos=table %}
+```shell
 mvn clean install -Prelease \
 -Dsign.keystore=PATH_OF_THE_PROJECT/my-android-project/test-key.keystore \
 -Dsign.alias=mykey \
 -Dsign.storepass=testtest \
 -Dsign.keypass=testtest
-{% endhighlight %}
+```
 
 
 Now we need to download and add to our project dependencies [ActionbarBarSherlock](http://actionbarsherlock.com/).
@@ -72,26 +76,27 @@ Latest version of the library always is available in project [download page](htt
 
 ![image](http://3.bp.blogspot.com/-xcB5pGCi7dY/UJZ_tfwiHhI/AAAAAAAAEGY/CMAXMVj8vCU/s1600/skitch+(6).png)
 
-As it is stated on [abs usage page](http://actionbarsherlock.com/usage.html) the only thing we need - is to add this lines to `my-android-project/my-android-project/pom.xml`:
+As it is stated on [abs usage page](http://actionbarsherlock.com/usage.html) the only thing we need - is to add this lines to `my-android-project/my-android-project/pom.xml` :
 
-{% highlight xml linenos=table %}
+
+```xml
 <dependency>
   <groupId>com.actionbarsherlock</groupId>
   <artifactId>actionbarsherlock</artifactId>
   <version>4.2.0</version>
   <type>apklib</type>
 </dependency>
-{% endhighlight %}
+```
 
 Also you need to extend `HelloAndroidActivity` from `com.actionbarsherlock.app.SherlockActivity` instead of `android.app.Activity` and change activity theme in `AndroidManifest.xml` to `android:theme="@style/Theme.Sherlock"`. Checkout [git patch file](https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/patch.diff) for details. Try to build app. From parent project folder execute:
 
-{% highlight bash linenos=table %}
+```shell
 mvn clean install
-{% endhighlight %}
+```
 
 You'll get following error: 
 
-{% highlight bash linenos=table %}
+```shell
 [INFO] UNEXPECTED TOP-LEVEL EXCEPTION:
 [INFO] java.lang.IllegalArgumentException: already added: Landroid/support/v4/app/Watson$OnCreateOptionsMenuListener;
 [INFO]  at com.android.dx.dex.file.ClassDefsSection.add(ClassDefsSection.java:123)
@@ -123,12 +128,12 @@ You'll get following error:
 [INFO] Final Memory: 15M/81M
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal com.jayway.maven.plugins.android.generation2:android-maven-plugin:3.1.1:dex (default-dex) on project my-android-project-it: MojoExecutionException: ANDROID-040-001: Could not execute: Command = /bin/sh -c cd /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it && /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output=/Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project/target/my-android-project-1.0-SNAPSHOT.jar /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar, Result = 1 -> [Help 1]
-{% endhighlight %}
+```
 
 
 If you carefully take a look to the last error you'll notice that problem is with `generation2` goal, it uses dex tool from Android SDK to generate class files for Dalvik, during execution it include `actionbarsherlock` and `support-v4-r7` dependencies two times (second time like transitive dependency from our application project), checkout  it `--output` parameter values (here is a bit formatted text from maven error):
 
-{% highlight bash linenos=table %}
+```shell
 /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output=
   /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex 
   /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib
@@ -136,12 +141,12 @@ If you carefully take a look to the last error you'll notice that problem is wit
   /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes 
   /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar 
   /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar
-{% endhighlight %}
+```
 
 
 We can fix this error by adding `actionbarsherlock` and `support-v4-r7` dependencies with scope provided to `my-android-project-it/pom.xml`:
 
-{% highlight xml linenos=table %}
+```xml
 <dependency>
   <groupId>com.google.android</groupId>
   <artifactId>support-v4</artifactId>
@@ -156,7 +161,7 @@ We can fix this error by adding `actionbarsherlock` and `support-v4-r7` dependen
    <type>apklib</type>
    <scope>provided</scope>
 </dependency>
-{% endhighlight %}
+```
 
 
 Now project should build successfully.
@@ -187,14 +192,14 @@ Now all errors form eclipse markers view should disappear and we can run our pro
 
 In console view you'll find error like this one:
 
-{% highlight bash linenos=table %}
+```shell
 [2012-11-04 14:22:26 - my-android-project] Conversion to Dalvik format failed with error 1
 [2012-11-04 14:23:55 - my-android-project] Dx 
 UNEXPECTED TOP-LEVEL EXCEPTION:
 java.lang.IllegalArgumentException: already added: Lorg/hamcrest/BaseDescription;
 [2012-11-04 14:23:55 - my-android-project] Dx  at com.android.dx.dex.file.ClassDefsSection.add(ClassDefsSection.java:123)
 [2012-11-04 14:23:55 - my-android-project] Dx  at com.android.dx.dex.file.DexFile.add(DexFile.java:163)
-{% endhighlight %}
+```
 
 
 Remember our problem with maven configuration? Here we have quite the same issue with double inclusion. In order to fix it remove libs folder with `android-support-v4.jar` from `actionbarsherlock` project.
