@@ -1,0 +1,90 @@
+.blog-container {
+	padding-top: 50px;
+	@media (max-width: 767px) {
+		padding-top: 20px;
+	}
+	hr {
+		margin: 50px 15px;
+	}
+}
+.article-list {
+	ul {
+		padding: 0;
+	}
+	span {
+		display: block;
+	}
+	.left {
+		width: 75px;
+		float: left;
+		@media (max-width: 767px) {
+	        width: 60px;
+	    }
+	}
+	.right {
+		margin-left: 100px;
+		@media (max-width: 767px) {
+	        margin-left: 80px;
+	    }
+	}
+	.date {
+		color: $main-color;
+		text-transform: uppercase;
+		font-weight: $bold;
+	}
+	.year {
+		font-weight: $bold;
+		color: $header-color;
+		line-height: 100%;
+		font-size: $base-font-size * 0.8;
+	}
+	.article-title {
+		color: $header-color;
+	}
+	.categories {
+		color: $sub-color;
+	}
+}
+.article-item {
+	margin-bottom: 50px;
+	list-style: none;
+	&:last-child {
+		margin: 0;
+	}
+}
+.article-intro {
+	color: $text-color;
+}
+
+.on-web {
+	ul {
+		padding: 0;
+	}
+}
+.on-web-item {
+	margin-top: 20px;
+	list-style: none;
+	&:last-child {
+		margin: 0;
+	}
+}
+.on-web-title {
+	color: $header-color;
+	margin-bottom: 0;
+	line-height: 100%;
+}
+.on-web-detail {
+	font-size: $base-font-size * 0.8;
+	color: $text-color;
+	text-transform: uppercase;
+	.source-name {
+		color: $sub-color;
+		float: left;
+	}
+	.type {
+		color: $sub-color;
+	}
+	.divider {
+		margin-left: 4px;
+	}
+}
