@@ -88,7 +88,7 @@ As it is stated on [abs usage page](http://actionbarsherlock.com/usage.html) the
 </dependency>
 ```
 
-Also you need to extend `HelloAndroidActivity` from `com.actionbarsherlock.app.SherlockActivity` instead of `android.app.Activity` and change activity theme in `AndroidManifest.xml` to `android:theme="@style/Theme.Sherlock"`. Checkout [git patch file](https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/patch.diff) for details. Try to build app. From parent project folder execute:
+Also you need to extend `HelloAndroidActivity` from `com.actionbarsherlock.app.SherlockActivity` instead of `android.app.Activity` and change activity theme in `AndroidManifest.xml` to `android:theme="@style/Theme.Sherlock"`. Checkout [git patch file]({{site.baseurl}}/files/vitaliy/posts/abs-maven-eclipse-integration/patch.diff) for details. Try to build app. From parent project folder execute:
 
 ```shell
 mvn clean install
@@ -184,6 +184,14 @@ Let's fix build path problems that we have.
 
 ![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-2.png)
 
+As we are using separate project for integration test, we should remove `src/test/java` folder from `my-android-project` and `my-android-project-it` build path:
+
+1. Go to `my-android-project` (or `my-android-project-it`) properties
+2. Open Java Build Path section
+3. Under Sources tab select `src/test/java` folder
+4. Press remove button  
+
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-3.png)
 
 Now all errors form eclipse markers view should disappear and we can run our project. Select `my-android-project` and run it as android application...but you'll get:
 
@@ -212,6 +220,6 @@ Finally, clean all projects and run `my-android-project`. We've got working appl
 ![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/app-screenshot.png)
 
 
-Sample project from post you can [download here](https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/my-android-project-parent.zip).
+Sample project from post you can [download here]({{site.baseurl}}/files/vitaliy/posts/abs-maven-eclipse-integration/my-android-project-parent.zip).
 
 Hope this post was useful, if you have any notes or propositions how it can be improved, please write a comment.

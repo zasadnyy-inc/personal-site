@@ -1,0 +1,47 @@
+diff --git a/my-android-project/AndroidManifest.xml b/my-android-project/AndroidManifest.xml
+index 92fd765..06956ea 100644
+--- a/my-android-project/AndroidManifest.xml
++++ b/my-android-project/AndroidManifest.xml
+@@ -3,7 +3,7 @@
+   package="com.foo.bar.test" android:versionCode="1" android:versionName="1.0-SNAPSHOT">
+ 
+   <application android:icon="@drawable/icon" android:label="@string/app_name">
+-    <activity android:name=".HelloAndroidActivity">
++    <activity android:name=".HelloAndroidActivity" android:theme="@style/Theme.Sherlock">
+       <intent-filter>
+         <action android:name="android.intent.action.MAIN" />
+         <category android:name="android.intent.category.LAUNCHER" />
+diff --git a/my-android-project/pom.xml b/my-android-project/pom.xml
+index 4762be6..6589bee 100644
+--- a/my-android-project/pom.xml
++++ b/my-android-project/pom.xml
+@@ -24,6 +24,12 @@
+       <groupId>de.akquinet.android.androlog</groupId>
+       <artifactId>androlog</artifactId>
+     </dependency>
++    <dependency>
++       <groupId>com.actionbarsherlock</groupId>
++       <artifactId>actionbarsherlock</artifactId>
++       <version>4.2.0</version>
++       <type>apklib</type>
++    </dependency>
+   </dependencies>
+ 
+   <build>
+diff --git a/my-android-project/src/main/java/com/foo/bar/test/HelloAndroidActivity.java b/my-android-project/src/main/java/com/foo/bar/test/HelloAndroidActivity.java
+index d00a4cd..7497c13 100644
+--- a/my-android-project/src/main/java/com/foo/bar/test/HelloAndroidActivity.java
++++ b/my-android-project/src/main/java/com/foo/bar/test/HelloAndroidActivity.java
+@@ -1,10 +1,10 @@
+ package com.foo.bar.test;
+ 
+-import android.app.Activity;
++import com.actionbarsherlock.app.SherlockActivity;
+ import android.os.Bundle;
+ import android.util.Log;
+ 
+-public class HelloAndroidActivity extends Activity {
++public class HelloAndroidActivity extends SherlockActivity {
+ 
+     private static String TAG = "my-android-project";
+ 
