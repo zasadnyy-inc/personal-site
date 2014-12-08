@@ -2,7 +2,7 @@
 layout: article
 title: "Action Bar Sherlock, Maven, eclipse integration"
 author: "Vitaliy Zasadnyy"
-description: "Some short description"
+description: "Step by step guide"
 date: 2012-11-04 00:01:00
 estimate: "10 mins"
 categories: android google
@@ -11,7 +11,7 @@ theme_color: "#21e034"
 image: ""
 ---
 
-![image](http://1.bp.blogspot.com/-N2LE51GMJNU/UJZtsJQiviI/AAAAAAAAEFk/p5_YM_10pqU/s1600/eclipse-maven-abs.png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-maven-abs.png)
 
 Hello, today I'd like to describe process of integration commonly used library for emulation action bar in old Android versions - [ActionBarSherlock](http://actionbarsherlock.com/) into maven - eclipse project.
 In a result we'll get project with:
@@ -38,7 +38,7 @@ If you'll use eclipse for a development, you'll also need:
 
 At first lets create android project using akquinet [android-archetypes](https://github.com/akquinet/android-archetypes). In result we'll get sample project with configured release targets and integration tests project. Copy to terminal following code, replacing highligted lines with your values:
 
-```shell mark:2-4 title:"Testing codefence" url:"https://github.com/octopress/codefence" link_text:"plugin link"
+```shell mark:5-7
 mvn archetype:generate \
  -DarchetypeArtifactId=android-release \
  -DarchetypeGroupId=de.akquinet.android.archetypes \
@@ -74,7 +74,7 @@ Now we need to download and add to our project dependencies [ActionbarBarSherloc
 
 Latest version of the library always is available in project [download page](http://actionbarsherlock.com/download.html). When it's ready, unzip archive, copy `library` folder to your project root and rename it to `actionbarsherlock`:
 
-![image](http://3.bp.blogspot.com/-xcB5pGCi7dY/UJZ_tfwiHhI/AAAAAAAAEGY/CMAXMVj8vCU/s1600/skitch+(6).png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/my-android-project-1.png)
 
 As it is stated on [abs usage page](http://actionbarsherlock.com/usage.html) the only thing we need - is to add this lines to `my-android-project/my-android-project/pom.xml` :
 
@@ -133,7 +133,7 @@ You'll get following error:
 
 If you carefully take a look to the last error you'll notice that problem is with `generation2` goal, it uses dex tool from Android SDK to generate class files for Dalvik, during execution it include `actionbarsherlock` and `support-v4-r7` dependencies two times (second time like transitive dependency from our application project), checkout  it `--output` parameter values (here is a bit formatted text from maven error):
 
-```shell
+```shell mark:3,7
 /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output=
   /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex 
   /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib
@@ -146,7 +146,7 @@ If you carefully take a look to the last error you'll notice that problem is wit
 
 We can fix this error by adding `actionbarsherlock` and `support-v4-r7` dependencies with scope provided to `my-android-project-it/pom.xml`:
 
-```xml
+```xml mark:5,13
 <dependency>
   <groupId>com.google.android</groupId>
   <artifactId>support-v4</artifactId>
@@ -169,11 +169,11 @@ Now project should build successfully.
 
 Next steep is to configurate eclipse. Rename parent folder of a project from `my-android-project` to `my-android-project-parent`.
 
-![image](http://3.bp.blogspot.com/-9IbLAQSGEqY/UJZ_4Bich5I/AAAAAAAAEGg/9QX6bdpcIIU/s1600/skitch.png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/my-android-project-2.png)
 
 Open eclipse, import `my-android-project-parent` using existing maven project wizard. As `actionbarsherlock` is not part of our parent maven project you'll also need to import it as existing maven project (<u>don't</u> import it as android library project!). After this steeps you should have following project structure: 
 
-![image](http://4.bp.blogspot.com/-ulCNdpZlluo/UJZ_-SFVYMI/AAAAAAAAEGo/SY2tMbavGTE/s1600/skitch+(1).png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-1.png)
 
 Let's fix build path problems that we have.
 
@@ -182,12 +182,12 @@ Let's fix build path problems that we have.
 3. Add `actionbarsherlock` as library by pressing Add button
 4. Now you should see `actionbarsherlock` in library section
 
-![image](http://1.bp.blogspot.com/-mpZ-NRhsdqE/UJaAG_IwCYI/AAAAAAAAEGw/5ffRusEUui0/s640/skitch+(2).png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-2.png)
 
 
 Now all errors form eclipse markers view should disappear and we can run our project. Select `my-android-project` and run it as android application...but you'll get:
 
-![image](http://4.bp.blogspot.com/-vxlkSq2PIEk/UJaAZ_gBz1I/AAAAAAAAEHA/FURcJnLm724/s1600/skitch+(4).png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-3-error.png)
 
 
 In console view you'll find error like this one:
@@ -204,12 +204,12 @@ java.lang.IllegalArgumentException: already added: Lorg/hamcrest/BaseDescription
 
 Remember our problem with maven configuration? Here we have quite the same issue with double inclusion. In order to fix it remove libs folder with `android-support-v4.jar` from `actionbarsherlock` project.
 
-![image](http://1.bp.blogspot.com/-o5m_thbuTc4/UJaAhASgRFI/AAAAAAAAEHI/0WCeDz2N55w/s1600/skitch+(5).png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-4.png)
 
 
 Finally, clean all projects and run `my-android-project`. We've got working application:
 
-![image](http://3.bp.blogspot.com/-iTMxDmqxpfo/UJZxZFI4LAI/AAAAAAAAEF0/zFnvLNiVJJo/s320/device-2012-11-04-154320.png)
+![image]({{site.baseurl}}/img/vitaliy/posts/abs-maven-eclipse-integration/app-screenshot.png)
 
 
 Sample project from post you can [download here](https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/my-android-project-parent.zip).
