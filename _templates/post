@@ -7,6 +7,5 @@ date: {{ date }}
 estimate: "0 mins"
 categories: [one, two]
 post: true
-theme_color: ""
 image: ""
 ---

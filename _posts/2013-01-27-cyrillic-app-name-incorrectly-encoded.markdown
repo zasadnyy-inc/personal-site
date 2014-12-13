@@ -7,7 +7,6 @@ date: 2013-01-27T23:16:46+02:00
 estimate: "4 mins"
 categories: blackberry
 post: true
-theme_color: "#0f7be0"
 ---
 
 Hi all, today I'll describe bug in latest version of apk2bar (version 1.5.0) tool provided by Blackberry for converting Android apk apps to bar.
