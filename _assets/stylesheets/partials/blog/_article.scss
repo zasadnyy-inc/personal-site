@@ -10,6 +10,19 @@
 	h5 {
 		margin-top: 20px;	
 	}
+	.note {
+		margin: 25px 15px;
+		padding: 10px 15px;
+		border-left: 5px solid $main-color;
+	}
+	.quote {
+		margin: 25px 15px;
+		padding: 10px 20px;
+		display: flex;
+		border-right: 5px solid $sub-text-color;
+		font-style: italic;
+		text-align: right;
+	} 
 }
 .article-header {
 	margin-bottom: 40px;

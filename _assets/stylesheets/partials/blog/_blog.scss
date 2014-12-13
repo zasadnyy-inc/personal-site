@@ -42,7 +42,7 @@
 		color: $header-color;
 	}
 	.categories {
-		color: $sub-color;
+		color: $main-color-second;
 	}
 }
 .article-item {
@@ -60,6 +60,14 @@
 	ul {
 		padding: 0;
 	}
+	h5 {
+		color: $header-color;
+	}
+	.side-link {
+		color: $main-color-second;
+		margin-top: 20px;
+		display: block;
+	}
 }
 .on-web-item {
 	margin-top: 20px;
@@ -69,7 +77,7 @@
 	}
 }
 .on-web-title {
-	color: $header-color;
+	color: $text-color;
 	margin-bottom: 0;
 	line-height: 100%;
 }
@@ -78,11 +86,11 @@
 	color: $text-color;
 	text-transform: uppercase;
 	.source-name {
-		color: $sub-color;
+		color: $main-color-second;
 		float: left;
 	}
 	.type {
-		color: $sub-color;
+		color: $sub-color-second;
 	}
 	.divider {
 		margin-left: 4px;

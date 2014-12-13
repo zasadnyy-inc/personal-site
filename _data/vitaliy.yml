@@ -23,6 +23,7 @@ navigation:
  - {permalink: "/#past", text: "The past", class: "sub-nav", major: "/"}
  - {permalink: "/#contact", text: "Contact me", class: "sub-nav", major: "/"}
  - {permalink: "/blog/", text: "Blog"}
+ - {permalink: "/me-on-web/", text: "Me on web"}
 
 # Landing section
 welcome_text: "Hello, I'm Vitaliy"

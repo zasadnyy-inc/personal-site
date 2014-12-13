@@ -6,11 +6,7 @@ code,
 kbd,
 samp,
 tt {
-  color: inherit;
-  background-color: $code-bg;
-  border: 1px solid $code-border;
   font-family: $code-font-family;
-  border-radius: 3px;
   font-size: $code-font-size;
   &:before, &:after {
     content: "\00a0";
