@@ -5,37 +5,185 @@
     <description>Hi, my name is Vitaliy, I&#39;m mobile developer and Google Developers Group Lviv co-founder. I&#39;m interested in GameDev, Android, iOS, Google App Engine and community management. Used to work for enterprise giants like EPAM as well as for product companies such as NRavo.</description>
     <link>http://zasadnyy-inc.github.io/personal-site/</link>
     <atom:link href="http://zasadnyy-inc.github.io/personal-site/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 12:39:53 +0200</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 12:39:53 +0200</lastBuildDate>
+    <pubDate>Sun, 14 Dec 2014 00:35:42 +0200</pubDate>
+    <lastBuildDate>Sun, 14 Dec 2014 00:35:42 +0200</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
-        <title>Happy birthday!</title>
-        <description>&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/personal-site/img/vitaliy/posts/happy_birthday.jpg&quot; alt=&quot;Happy birthday!&quot; /&gt;
-Happy birthday my brother!&lt;/p&gt;
+        <title>Android form validation - the right way</title>
+        <description>&lt;p&gt;After quite a long pause, I’m getting back with new series of posts. And we’ll start with Android &lt;code&gt;EditText&lt;/code&gt; form validations.&lt;/p&gt;
 
-&lt;p&gt;I wish you mad love, success in work, interesting projects and best friends.&lt;/p&gt;
+&lt;p&gt;At first lets define that Android form - it is set of EditText ‘s whose data should be processed. There are two main steps to make processing successful: data input and data validation.&lt;/p&gt;
 
-&lt;p&gt;Made for you a small gift - your personal site. I hope you will enjoy it.
-Thank you for your support and helping me in all situations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/android-form-validation-right-way/z-validations-valid-form.png&quot; alt=&quot;image&quot; /&gt;
+Chuck Noris is always valid&lt;/p&gt;
 
+&lt;h4 id=&quot;data-input&quot;&gt;Data input&lt;/h4&gt;
+
+&lt;p&gt;In order to make user input easy and comfortable we need to configure &lt;code&gt;EditText&lt;/code&gt; properly, here is some tips on it:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;put constraints by specifying the type of keyboard you want for your &lt;code&gt;EditText&lt;/code&gt; with &lt;code&gt;android:inputType&lt;/code&gt; attribute. For example, if you want the user to input only digits write &lt;code&gt;android:inputType=&quot;number&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;besides specifying keyboard type using &lt;code&gt;android:inputType&lt;/code&gt; attribute you can define other behaviors such as, whether to capitalize all new words or use features like auto-complete and spelling suggestions, e. g.  &lt;code&gt;android:inputType=&quot;textCapWords|textNoSuggestions&quot;&lt;/code&gt;, note that you can put several markers using bitwise operator&lt;/li&gt;
+  &lt;li&gt;probably you’ll want to disable fullscreen keyboard on landscape mode, you can do this using &lt;code&gt;android:imeOptions=&quot;flagNoExtractUi&quot;&lt;/code&gt; attribute&lt;/li&gt;
+  &lt;li&gt;pre-fill form data and provide auto complete if possible, for example in email registration form you can get user email from &lt;code&gt;AccountManager&lt;/code&gt;, &lt;a href=&quot;http://stackoverflow.com/a/2175688/731775&quot;&gt;example from Roman Nurik on stackoverflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;validate and submit form when user press enter on last EditText field, here code snippet I use:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;mTextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnEditorActionListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnEditorActionListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onEditorAction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actionId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KeyEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;actionId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EditorInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;IME_ACTION_DONE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;                    
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;            &lt;span class=&quot;n&quot;&gt;validateAndSubmit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&amp;#x7d;);&lt;/span&gt; &lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here is code snippet from layout file with described above attributes:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;EditText&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/postal_address&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:inputType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;textPostalAddress|textCapWords&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:autoText=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:editable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:selectAllOnFocus=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:singleLine=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:imeOptions=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flagNoExtractUi&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;na&quot;&gt;android:hint=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter postal address&quot;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;     &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;data-validation&quot;&gt;Data validation&lt;/h4&gt;
+
+&lt;p&gt;Actually question is not how to validate, but &lt;strong&gt;how to show validation errors in a user friendly way&lt;/strong&gt;? &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://developer.android.com/reference/android/widget/TextView.html#setError(java.lang.CharSequence)&quot;&gt;Android API&lt;/a&gt; provide &lt;code&gt;public void setError(CharSequence error, Drawable icon)&lt;/code&gt; method on EditText instance to display errors.&lt;/p&gt;
+
+&lt;p&gt;As form validation is quite commom task there are several third party libraries for that, e.g.:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/throrin19/Android-Validator&quot;&gt;Android-Validator by Benjamin Besse&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ragunathjawahar/android-saripaar&quot;&gt;Android Saripaar by Ragunath Jawahar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both of this libraries use default API to display errors, personally I don’t like it because when there are a lot of validation rules neglectful user can get screen like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/android-form-validation-right-way/z-validations-bad-example.png&quot; alt=&quot;image&quot; /&gt;
+Too much errors on one screen&lt;/p&gt;
+
+&lt;p&gt;So what is &lt;em&gt;“the right way”&lt;/em&gt;? Main idea is to help user &lt;strong&gt;solve errors one by one&lt;/strong&gt;. There are several things to do when validation error happens:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;find first text view where validation failed&lt;/li&gt;
+  &lt;li&gt;request focus for it: &lt;code&gt;mTextView.requestFocus()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;show error message, I prefer using Crouton library: &lt;code&gt;Crouton.makeText(mActivity, message, Style.ALERT).show()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;open keyboard so user can start typing instantly:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;InputMethodManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InputMethodManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSystemService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;INPUT_METHOD_SERVICE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// only will trigger it if no physical keyboard is open&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;n&quot;&gt;imm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showSoftInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mTextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;I’ve created small library with sample project where you can find all examples from this post, check it out on &lt;a href=&quot;https://github.com/zasadnyy/z-validations&quot;&gt;GitHub&lt;/a&gt; or install &lt;a href=&quot;https://play.google.com/store/apps/details?id=ua.org.zasadnyy.sample.zvalidations&quot;&gt;Demo app from Google Play&lt;/a&gt;. Sample code of creating validation form:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;mForm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Form&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;mForm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;using&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)));&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;mForm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;using&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mEmail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsEmail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)));&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;mForm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addField&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;using&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;validate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)));&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mForm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isValid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Form is valid&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/android-form-validation-right-way/z-validations-not-in-range.png&quot; alt=&quot;image&quot; /&gt;
+Failed InRange validation&lt;/p&gt;
+
+&lt;h5 id=&quot;useful-links&quot;&gt;Useful links&lt;/h5&gt;
+&lt;p&gt;&lt;em&gt;(I’ll update lists every time I find related topics)&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.android.com/guide/topics/ui/controls/text.html&quot;&gt;Post about text input on d.android.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Wed, 12 Nov 2014 02:01:00 +0200</pubDate>
-        <link>http://zasadnyy-inc.github.io/personal-site/blog/happy-birthday</link>
-        <guid isPermaLink="true">http://zasadnyy-inc.github.io/personal-site/blog/happy-birthday</guid>
+        <pubDate>Sun, 04 Aug 2013 01:14:17 +0300</pubDate>
+        <link>http://zasadnyy-inc.github.io/personal-site/blog/android-form-validation-right-way</link>
+        <guid isPermaLink="true">http://zasadnyy-inc.github.io/personal-site/blog/android-form-validation-right-way</guid>
         
         
-        <category>dates</category>
+        <category>android</category>
         
-        <category>birthday</category>
+        <category>best practices</category>
         
-        <category>happy</category>
+      </item>
+    
+      <item>
+        <title>Cyrillic app name incorrectly encoded during porting Android app to Blackberry</title>
+        <description>&lt;p&gt;Hi all, today I’ll describe bug in latest version of apk2bar (version 1.5.0) tool provided by Blackberry for converting Android apk apps to bar.&lt;/p&gt;
+
+&lt;p class=&quot;note&quot;&gt;Some special note.&lt;/p&gt;
+
+&lt;p class=&quot;quote&quot;&gt;“If debugging is the process of removing software bugs, then programming must be the process of putting them in.”&lt;br /&gt;
+Edsger Dijkstra&lt;/p&gt;
+
+&lt;p&gt;I had small problem with displaying cyrillic app name on PlayBook and BB10 simulator. App names was incorrectly encoded from russian after converting using apk2bar tool. Problem appeared after updating bb eclipse plugin from version 1.3 to 1.5, with plugin v.1.3 it worked just ok (the same issue was with command line tools).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/app-name-incorrectly-encoded/blackberry-10-screenshot.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When I got problems with encodding with bb eclipse plugin, I decided to do the same thing with comandline tools.&lt;/p&gt;
+
+&lt;p&gt;After tools setup (sing keys, debug tokens, etc), I’ve tried to repackage my apk file with this command (source apk file was in apk/ folder and destination for bar file was bar/ folder)&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;./apk2bar apk/ -d bbplaybookdebugtoken.bar -t bar/ -a &lt;span class=&quot;s2&quot;&gt;&quot;zasadnyy&quot;&lt;/span&gt; -cg&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;When I’ve got .bar file, I’ve installed it with command:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;/batchbar-deploy bar/ 192.168.1.35 mysecretpass&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Unfortunatelly result was unsuccsessful, app name was incorrectly encoded again. After first fail I’ve read documentation a bit more and tried to use &lt;a href=&quot;http://developer.blackberry.com/android/documentation/creating_a_custom_manifest_file_2016828_11.htm&quot;&gt;approach described on developer.blackberry.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When I unzipped bar file and opened &lt;code&gt;MANIFEST.MS&lt;/code&gt; - I’ve found this line:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;Application-Name: –ì–µ—Ä–æ–∏&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;According to documentation solution should be quite strait-forward: &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Rename &lt;code&gt;MANIFEST.MS&lt;/code&gt; to &lt;code&gt;&amp;lt;you apk name&amp;gt;.mf&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Update incorrect properties, in my case I’ve changed line from above to &lt;code&gt;&quot;Application-Name: Герои&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Put edited manifest file in the same folder as &lt;code&gt;&amp;lt;your apk name&amp;gt;.apk&lt;/code&gt; and rerun &lt;code&gt;apk2bar&lt;/code&gt; tool with &lt;code&gt;-m&lt;/code&gt; parameter, e.g.:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;./apk2bar apk/ -d bbplaybookdebugtoken.bar -t bar/ -a &lt;span class=&quot;s2&quot;&gt;&quot;zasadnyy&quot;&lt;/span&gt; -m -cg&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Repackage, deploy, run and ….. and again &lt;strong&gt;FAIL&lt;/strong&gt;. Application name was “–ì–µ—Ä–æ–∏”.&lt;/p&gt;
+
+&lt;p&gt;After second fail, I decided to make dirty hack, I’ve edited &lt;code&gt;MANIFEST.MF&lt;/code&gt; directly in repackaged bar file (Unzip → edit manifest → zip → change file extension to .bar).&lt;/p&gt;
+
+&lt;p&gt;Deploy updated .bar file to playbook and …. &lt;strong&gt;YEAH&lt;/strong&gt;, we’ve got cyrilic app name!&lt;/p&gt;
+
+&lt;h5 id=&quot;conclusion-and-fix&quot;&gt;Conclusion and FIX:&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;Looks like in 1.5 release if apk2bar tool manifest encoding is misconfigured (in ver. 1.3 it worked just ok)&lt;/li&gt;
+  &lt;li&gt;In oder to FIX issue: unzip unsigned bar file → edit manifest → zip → change file extension back to .bar&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 27 Jan 2013 23:16:46 +0200</pubDate>
+        <link>http://zasadnyy-inc.github.io/personal-site/blog/cyrillic-app-name-incorrectly-encoded</link>
+        <guid isPermaLink="true">http://zasadnyy-inc.github.io/personal-site/blog/cyrillic-app-name-incorrectly-encoded</guid>
+        
+        
+        <category>blackberry</category>
         
       </item>
     
       <item>
         <title>Action Bar Sherlock, Maven, eclipse integration</title>
-        <description>&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/-N2LE51GMJNU/UJZtsJQiviI/AAAAAAAAEFk/p5_YM_10pqU/s1600/eclipse-maven-abs.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-maven-abs.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Hello, today I’d like to describe process of integration commonly used library for emulation action bar in old Android versions - &lt;a href=&quot;http://actionbarsherlock.com/&quot;&gt;ActionBarSherlock&lt;/a&gt; into maven - eclipse project.
 In a result we’ll get project with:&lt;/p&gt;
@@ -65,13 +213,13 @@ In a result we’ll get project with:&lt;/p&gt;
 
 &lt;p&gt;At first lets create android project using akquinet &lt;a href=&quot;https://github.com/akquinet/android-archetypes&quot;&gt;android-archetypes&lt;/a&gt;. In result we’ll get sample project with configured release targets and integration tests project. Copy to terminal following code, replacing highligted lines with your values:&lt;/p&gt;
 
-&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;Testing codefence&lt;/span&gt;&lt;a class=&quot;code-highlight-caption-link&quot; href=&quot;https://github.com/octopress/codefence&quot;&gt;plugin link&lt;/a&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn archetype:generate &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeArtifactId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;android-release &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeGroupId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;de.akquinet.android.archetypes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeVersion&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.0.8 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DgroupId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;com.foo.bar &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DartifactId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;my-android-project &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -Dpackage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;com.foo.bar.test &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn archetype:generate &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeArtifactId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;android-release &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeGroupId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;de.akquinet.android.archetypes &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DarchetypeVersion&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.0.8 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DgroupId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;com.foo.bar &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -DartifactId&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;my-android-project &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -Dpackage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;com.foo.bar.test &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; -Dplatform&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;16&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Once generated, the application is ready to be built and tested. Start an android emulator, or plug an Android dev phone, and execute:&lt;/p&gt;
@@ -93,7 +241,7 @@ In a result we’ll get project with:&lt;/p&gt;
 
 &lt;p&gt;Latest version of the library always is available in project &lt;a href=&quot;http://actionbarsherlock.com/download.html&quot;&gt;download page&lt;/a&gt;. When it’s ready, unzip archive, copy &lt;code&gt;library&lt;/code&gt; folder to your project root and rename it to &lt;code&gt;actionbarsherlock&lt;/code&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-xcB5pGCi7dY/UJZ_tfwiHhI/AAAAAAAAEGY/CMAXMVj8vCU/s1600/skitch+(6).png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/my-android-project-1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As it is stated on &lt;a href=&quot;http://actionbarsherlock.com/usage.html&quot;&gt;abs usage page&lt;/a&gt; the only thing we need - is to add this lines to &lt;code&gt;my-android-project/my-android-project/pom.xml&lt;/code&gt; :&lt;/p&gt;
 
@@ -104,7 +252,7 @@ In a result we’ll get project with:&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;apklib&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
-&lt;p&gt;Also you need to extend &lt;code&gt;HelloAndroidActivity&lt;/code&gt; from &lt;code&gt;com.actionbarsherlock.app.SherlockActivity&lt;/code&gt; instead of &lt;code&gt;android.app.Activity&lt;/code&gt; and change activity theme in &lt;code&gt;AndroidManifest.xml&lt;/code&gt; to &lt;code&gt;android:theme=&quot;@style/Theme.Sherlock&quot;&lt;/code&gt;. Checkout &lt;a href=&quot;https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/patch.diff&quot;&gt;git patch file&lt;/a&gt; for details. Try to build app. From parent project folder execute:&lt;/p&gt;
+&lt;p&gt;Also you need to extend &lt;code&gt;HelloAndroidActivity&lt;/code&gt; from &lt;code&gt;com.actionbarsherlock.app.SherlockActivity&lt;/code&gt; instead of &lt;code&gt;android.app.Activity&lt;/code&gt; and change activity theme in &lt;code&gt;AndroidManifest.xml&lt;/code&gt; to &lt;code&gt;android:theme=&quot;@style/Theme.Sherlock&quot;&lt;/code&gt;. Checkout &lt;a href=&quot;/personal-site/files/vitaliy/posts/abs-maven-eclipse-integration/patch.diff&quot;&gt;git patch file&lt;/a&gt; for details. Try to build app. From parent project folder execute:&lt;/p&gt;
 
 &lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;mvn clean install&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
@@ -146,11 +294,11 @@ In a result we’ll get project with:&lt;/p&gt;
 
 &lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx1024M -jar /Users/vitaliyzasadnyy/Development/SDKs/android-sdk-macosx/platform-tools/lib/dx.jar --dex --output&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes.dex 
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/com/actionbarsherlock/actionbarsherlock/4.2.0/actionbarsherlock-4.2.0.apklib
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project/target/my-android-project-1.0-SNAPSHOT.jar
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/Development/workspaces/blog/my-android-project-parent/my-android-project-it/target/classes 
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/de/akquinet/android/androlog/androlog/1.0.5/androlog-1.0.5.jar 
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  /Users/vitaliyzasadnyy/.m2/repository/com/google/android/support-v4/r7/support-v4-r7.jar&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;We can fix this error by adding &lt;code&gt;actionbarsherlock&lt;/code&gt; and &lt;code&gt;support-v4-r7&lt;/code&gt; dependencies with scope provided to &lt;code&gt;my-android-project-it/pom.xml&lt;/code&gt;:&lt;/p&gt;
 
@@ -158,25 +306,25 @@ In a result we’ll get project with:&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.google.android&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;support-v4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;r7&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.actionbarsherlock&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;actionbarsherlock&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;4.2.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;apklib&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered marked-line start-marked-line end-marked-line&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now project should build successfully.&lt;/p&gt;
 
 &lt;p&gt;Next steep is to configurate eclipse. Rename parent folder of a project from &lt;code&gt;my-android-project&lt;/code&gt; to &lt;code&gt;my-android-project-parent&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-9IbLAQSGEqY/UJZ_4Bich5I/AAAAAAAAEGg/9QX6bdpcIIU/s1600/skitch.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/my-android-project-2.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Open eclipse, import &lt;code&gt;my-android-project-parent&lt;/code&gt; using existing maven project wizard. As &lt;code&gt;actionbarsherlock&lt;/code&gt; is not part of our parent maven project you’ll also need to import it as existing maven project (&lt;u&gt;don&#39;t&lt;/u&gt; import it as android library project!). After this steeps you should have following project structure: &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://4.bp.blogspot.com/-ulCNdpZlluo/UJZ_-SFVYMI/AAAAAAAAEGo/SY2tMbavGTE/s1600/skitch+(1).png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Let’s fix build path problems that we have.&lt;/p&gt;
 
@@ -187,11 +335,22 @@ In a result we’ll get project with:&lt;/p&gt;
   &lt;li&gt;Now you should see &lt;code&gt;actionbarsherlock&lt;/code&gt; in library section&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/-mpZ-NRhsdqE/UJaAG_IwCYI/AAAAAAAAEGw/5ffRusEUui0/s640/skitch+(2).png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-2.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As we are using separate project for integration test, we should remove &lt;code&gt;src/test/java&lt;/code&gt; folder from &lt;code&gt;my-android-project&lt;/code&gt; and &lt;code&gt;my-android-project-it&lt;/code&gt; build path:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go to &lt;code&gt;my-android-project&lt;/code&gt; (or &lt;code&gt;my-android-project-it&lt;/code&gt;) properties&lt;/li&gt;
+  &lt;li&gt;Open Java Build Path section&lt;/li&gt;
+  &lt;li&gt;Under Sources tab select &lt;code&gt;src/test/java&lt;/code&gt; folder&lt;/li&gt;
+  &lt;li&gt;Press remove button  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now all errors form eclipse markers view should disappear and we can run our project. Select &lt;code&gt;my-android-project&lt;/code&gt; and run it as android application…but you’ll get:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://4.bp.blogspot.com/-vxlkSq2PIEk/UJaAZ_gBz1I/AAAAAAAAEHA/FURcJnLm724/s1600/skitch+(4).png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-3-error.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In console view you’ll find error like this one:&lt;/p&gt;
 
@@ -204,13 +363,13 @@ In a result we’ll get project with:&lt;/p&gt;
 
 &lt;p&gt;Remember our problem with maven configuration? Here we have quite the same issue with double inclusion. In order to fix it remove libs folder with &lt;code&gt;android-support-v4.jar&lt;/code&gt; from &lt;code&gt;actionbarsherlock&lt;/code&gt; project.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/-o5m_thbuTc4/UJaAhASgRFI/AAAAAAAAEHI/0WCeDz2N55w/s1600/skitch+(5).png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/eclipse-project-4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, clean all projects and run &lt;code&gt;my-android-project&lt;/code&gt;. We’ve got working application:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-iTMxDmqxpfo/UJZxZFI4LAI/AAAAAAAAEF0/zFnvLNiVJJo/s320/device-2012-11-04-154320.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/personal-site/img/vitaliy/posts/abs-maven-eclipse-integration/app-screenshot.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Sample project from post you can &lt;a href=&quot;https://dl.dropbox.com/u/7656932/blog/action_bar_sherlock_mvn_integration/my-android-project-parent.zip&quot;&gt;download here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Sample project from post you can &lt;a href=&quot;/personal-site/files/vitaliy/posts/abs-maven-eclipse-integration/my-android-project-parent.zip&quot;&gt;download here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Hope this post was useful, if you have any notes or propositions how it can be improved, please write a comment.&lt;/p&gt;
 </description>
