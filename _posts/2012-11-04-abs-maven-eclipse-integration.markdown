@@ -5,7 +5,7 @@ author: "Vitaliy Zasadnyy"
 description: "Step by step guide"
 date: 2012-11-04 00:01:00
 estimate: "10 mins"
-categories: android google
+categories: [android, maven, eclipse] 
 post: true
 theme_color: "#21e034"
 image: ""
