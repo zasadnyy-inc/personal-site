@@ -7,21 +7,26 @@ date: 2013-01-27T23:16:46+02:00
 estimate: "4 mins"
 categories: [blackberry, bug]
 post: true
-theme_color: "#21e034"
-image: ""
 ---
 
 Hi all, today I'll describe bug in latest version of `apk2bar` (version 1.5.0) tool provided by Blackberry for converting Android apk apps to bar.
 
+Some special note.
+{:.note}
+
+“If debugging is the process of removing software bugs, then programming must be the process of putting them in.”  
+Edsger Dijkstra
+{:.quote}
+
 I had small problem with displaying cyrillic app name on PlayBook and BB10 simulator. App names was incorrectly encoded from russian after converting using apk2bar tool. Problem appeared after updating bb eclipse plugin from version 1.3 to 1.5, with plugin v.1.3 it worked just ok (the same issue was with command line tools).
 
-![image]({{site.baseurl}}/img/vitaliy/posts/app-name-incorrectly-encoded/blackberry-10-screenshot.png)
+![image]({{ site.baseurl }}/img/vitaliy/posts/app-name-incorrectly-encoded/blackberry-10-screenshot.png)
 
 When I got problems with encodding with bb eclipse plugin, I decided to do the same thing with comandline tools.
 
 After tools setup (sing keys, debug tokens, etc), I've tried to repackage my apk file with this command (source apk file was in apk/ folder and destination for bar file was bar/ folder)
 
-```
+```bash
 ./apk2bar apk/ -d bbplaybookdebugtoken.bar -t bar/ -a "zasadnyy" -cg
 ```
 
@@ -35,7 +40,7 @@ Unfortunatelly result was unsuccsessful, app name was incorrectly encoded again.
 
 When I unzipped bar file and opened `MANIFEST.MS` - I've found this line:
 
-```
+```bash
 Application-Name: –ì–µ—Ä–æ–∏
 ```
 
@@ -49,7 +54,7 @@ According to documentation solution should be quite strait-forward:
 ./apk2bar apk/ -d bbplaybookdebugtoken.bar -t bar/ -a "zasadnyy" -m -cg
 ```
 
- Repackage, deploy, run and ..... and again **FAIL**. Application name was "–ì–µ—Ä–æ–∏".
+Repackage, deploy, run and ..... and again **FAIL**. Application name was "–ì–µ—Ä–æ–∏".
 
 After second fail, I decided to make dirty hack, I've edited `MANIFEST.MF` directly in repackaged bar file (Unzip → edit manifest → zip → change file extension to .bar).
 

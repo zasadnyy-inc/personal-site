@@ -7,7 +7,6 @@ date: 2012-11-04 00:01:00
 estimate: "10 mins"
 categories: [android, maven, eclipse] 
 post: true
-theme_color: "#21e034"
 image: ""
 ---
 
