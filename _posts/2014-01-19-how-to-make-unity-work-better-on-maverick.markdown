@@ -29,9 +29,10 @@ So let’s start:
 
 3. **Disable “Automatic graphics switching”** in Power Saver settings. Go System Preferences → Do one of the following: if you see Graphics options, select Higher Performance. You need to log out and then log in again for the change to take effect. If you see the “Automatic graphics switching” option, deselect it. Your Mac will always use high-performance graphics.
  
+ 
 Early this week Thomas Petersen, QA Director in Unity Technologies wrote that they found the problem, let’s hope they’ll release fix for it soon:
 
-We have identified this as a leak in Maverick’s OpenGL ARB VBO implementation which is causing these issues. A build with a workaround has proven to work, but it is not the best solution. We have notified Apple about the problem. What exactly will happen has not yet been decided, so until there is a solution to the problem, it is best to not run on Mavericks.
-{:.quote}
+> We have identified this as a leak in Maverick’s OpenGL ARB VBO implementation which is causing these issues. A build with a workaround has proven to work, but it is not the best solution. We have notified Apple about the problem. What exactly will happen has not yet been decided, so until there is a solution to the problem, it is best to not run on Mavericks.
+
 
 **Update (29.01.14):** Unity releases version 4.3.4, where issue should be fixed. Download it [here](http://unity3d.com/unity/whats-new/unity-4.3.4).
