@@ -16,12 +16,12 @@ sourceUrl: "http://developers.nravo.com/best-test-devices-for-game-development"
 Recently I had a task to select what Android phones to buy to extend company’s test device list. To be more precise, I had to select 4-6 phones that will cover most part of possible hardware configurations (screen size, GPU vendor, etc) taking into account that mainly we make games using Unity 3D.
  
 
-##### Why is it important to test on devices with different GPUs?
+#### Why is it important to test on devices with different GPUs?
 
 If we’re talking about iOS, this question doesn’t make sense because all iPhones and iPads use PowerVR GPUs. But Android devices can be powered by [Adreno][adreno], [Tegra][tegra], [Mali][mali] or [PowerVR][povervr] GPUs. These differ in texture formats and how alpha is handled, and of course they all have different drivers and shader compilers. Unity documentation recommends using ETC texture compression, which is supported by all Android devices, is ‘safe’ and this is basically true, but in some cases ETC could not work the best or it’s possible to achieve better performance using other compression format adopted for certain GPU.
  
 
-##### Results of small market research I’ve made.
+#### Results of small market research I’ve made.
 
 According to statistics from [AppBrain][appbrain] for today the most popular Android phones are:
 

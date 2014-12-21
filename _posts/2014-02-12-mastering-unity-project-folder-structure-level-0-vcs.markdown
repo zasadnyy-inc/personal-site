@@ -23,17 +23,16 @@ Before gamedev I used to be an Android developer and I really liked predefined a
 {:.quote}
  
 
-##### Mastering Level 0. Folders required for version control systems.
+#### Mastering Level 0. Folders required for version control systems.
 
-![image]({{ site.baseurl }}/img/vitaliy/posts/mastering-unity-project-folder-structure-level-0-vcs/folder-structure.png) 
-<!-- Test Unity Project Folder StructureLets -->
+![Test Unity Project Folder StructureLets]({{ site.baseurl }}/img/vitaliy/posts/mastering-unity-project-folder-structure-level-0-vcs/folder-structure.png){:.pull-left style="margin: 10px 30px 30px 0px;"}
 
 Lets create new Unity project called “testproject”, import “Standard Assets (Mobile)” package, create new `Test.cs` script attached to camera and check our folder structure.
  
 You’ll find that there are quite a lot of files and folders, good news that **only two folders should be kept under source control: `Assets` and `ProjectSettings`**. Other are generated from this two.
  
 
-###### Here is a quick overview of all files and folders.
+##### Here is a quick overview of all files and folders.
  
 `Assembly-CSharp-vs.csproj` and `Assembly-CSharp.csproj` – Visual Studio (with `-vs` suffix) and MonoDevelop project files generated for your C# scripts.
  
@@ -63,11 +62,11 @@ Tip: after syncing project MonoDevelop will open testproject.sln with all projec
 `obj` and `Temp` – folders for temporary files generated during build, first one used by MonoDevelop, second – by Unity.
  
  
-##### Version Control System setup
+#### Version Control System setup
 
 There are several options how we can keep track of versions. Traditionally Unity encourages developers to use [Unity Asset Server](http://docs.unity3d.com/Documentation/Manual/AssetServer.html). Our team tried to use it for one month after what we agreed that Asset Server can’t handle everything we need, it doesn’t have branches, locks, it’s paid (requires Team Licence, +500$) and looks more like simplified SVN. So we have decided to switch to GIT.
  
-**Here is a short setup guide for Unity 4.3:**
+##### Here is a short setup guide for Unity 4.3
 
 1. Enable External option in Unity → Preferences → Packages → Repository
 2. Switch to Hidden Meta Files in Editor → Project Settings → Editor → Version Control Mode
@@ -122,5 +121,5 @@ In the second post I’ll describe what predefined folder does Unity use and wha
  
 More posts from Mastering Unity Project Folder Structure series:
 
-- Level 1 – Reserved Folders
-- Level 2 – Assets folder organization
+- [Level 1 – Reserved Folders]({{ site.baseurl }}/blog/mastering-unity-project-folder-structure-level-1-reserved-folders/)
+- [Level 2 – Assets folder organization]({{ site.baseurl }}/blog/mastering-unity-project-folder-structure-level-2-assets-organization/)

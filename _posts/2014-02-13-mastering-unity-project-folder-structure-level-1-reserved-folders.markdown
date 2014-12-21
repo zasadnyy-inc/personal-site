@@ -21,19 +21,19 @@ I’ve started to write this post on my own, but later found page on Unity Wiki 
 {:.quote}
  
 
-**Standard Assets**
+##### Standard Assets
 
 Scripts in here are always compiled first. Scripts are output to either `Assembly-CSharp-firstpass`, `Assembly-UnityScript-firstpass`, or `Assembly-Boo-firstpass` project, depending on the language. More information about script compilation order in [documentation](http://docs.unity3d.com/Documentation/Manual/ScriptCompileOrderFolders.html).
  
 Scripts inside the Standard Assets folder will be compiled earlier than your other scripts. So, placing scripts in Standard Assets is one way for C# scripts to be able to access .js scripts or vice-versa.
  
  
-**Pro Standard Assets**
+##### Pro Standard Assets
 
 Same with `Standard Assets`, only files here are meant for the Pro version. This means assets here make use of Pro-only features like render textures and screen-space effects. Again, scripts here are compiled earlier, allowing them to be accessed by other scripts (of any language) that are outside the `Pro Standard Assets` folder.
  
 
-**Editor**
+##### Editor
 
 The `Editor` folder name is a special name which allows your scripts to access to the Unity Editor Scripting API. If your script uses any classes or functionality from the UnityEditor namespace, it has to be placed in a folder called Editor.
  
@@ -48,7 +48,7 @@ Note: an `Editor` folder which is not located in another special folder can be p
 More about custom editors on the Unity [documentation](http://docs.unity3d.com/Documentation/Components/ExtendingTheEditor.html).
  
 
-**Plugins**
+##### Plugins
 
 The `Plugins` folder is where you must put any native plugins, which you want to be accessible by your scripts. They will also be automatically included in your build. Take note that this folder may not be in any subfolder (it has to reside within the top-level `Assets` folder).
  
@@ -59,7 +59,7 @@ Like the `Standard Assets` folder, any scripts in here are compiled earlier, all
 More information about creating [native Android](http://docs.unity3d.com/Documentation/Manual/PluginsForAndroid.html) and [iOS plugins](http://docs.unity3d.com/Documentation/Manual/PluginsForIOS.html) in Unity.
  
 
-**Resources**
+##### Resources
 
 The `Resources` folder is a special folder which allows you to access assets by file path and name in your scripts, rather than by the usual (and recommended) method of direct references (as variables in scripts via drag-and-drop in the Unity Editor).
  
@@ -72,17 +72,17 @@ Once your game is built, all assets in all `Resources` folders get packed into t
 Also see [Loading Resources at Runtime](http://docs.unity3d.com/Documentation/Manual/LoadingResourcesatRuntime.html) topic from documentation.
  
 
-**Gizmos**
+##### Gizmos
 
 The gizmos folder holds all the texture/icon assets for use with `Gizmos.DrawIcon()`. Texture assets placed inside this folder can be called by name, and drawn on-screen as a gizmo in the editor.
  
 
-**WebPlayerTemplates**
+##### WebPlayerTemplates
 
 Used to replace the default web page used for web builds. Any scripts placed here will not be compiled at all. This folder has to be just under `Assets` folder `Assets/WebPlayerTemplates/`. [More information](http://docs.unity3d.com/Documentation/Manual/UsingWebPlayertemplates.html).
  
 
-**Streaming Assets**
+##### Streaming Assets
 
 Any files in here are copied to the build folder as is, without any changes (except for mobile and web builds, where they get embedded into the final build file). The path where they are can vary per platform but is accessible via `Application.streamingAssetsPath`.
  
@@ -91,5 +91,6 @@ See documentation about [Application.streamingAssetsPath](http://docs.unity3d.co
  
 More posts from Mastering Unity Project Folder Structure series:
 
-- Level 0 – Folders required for version control systems
-- Level 2 – Assets folder organization
+
+- [Level 0 - Folders required for version control systems]({{ site.baseurl }}/blog/mastering-unity-project-folder-structure-level-0-vcs/)
+- [Level 2 – Assets folder organization]({{ site.baseurl }}/blog/mastering-unity-project-folder-structure-level-2-assets-organization/)

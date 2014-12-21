@@ -11,12 +11,8 @@ post: true
 
 Hi all, today I'll describe bug in latest version of `apk2bar` (version 1.5.0) tool provided by Blackberry for converting Android apk apps to bar.
 
-Some special note.
-{:.note}
-
-“If debugging is the process of removing software bugs, then programming must be the process of putting them in.”  
-Edsger Dijkstra
-{:.quote}
+> "If debugging is the process of removing software bugs, then programming must be the process of putting them in.”  
+> Edsger Dijkstra
 
 I had small problem with displaying cyrillic app name on PlayBook and BB10 simulator. App names was incorrectly encoded from russian after converting using apk2bar tool. Problem appeared after updating bb eclipse plugin from version 1.3 to 1.5, with plugin v.1.3 it worked just ok (the same issue was with command line tools).
 

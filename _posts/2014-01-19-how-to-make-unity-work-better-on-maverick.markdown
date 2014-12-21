@@ -4,7 +4,7 @@ title: "How to make Unity work better on Maverik"
 author: "Vitaliy Zasadnyy"
 description: "Long, long time ago there was a bug..."
 date: 2014-01-19T23:16:46+02:00
-estimate: "1 mins"
+estimate: "2 mins"
 categories: [unity3d, productivity]
 post: true
 external: true

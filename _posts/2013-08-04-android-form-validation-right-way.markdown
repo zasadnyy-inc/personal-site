@@ -56,6 +56,7 @@ Here is code snippet from layout file with described above attributes:
      />
 ```
 
+
 #### Data validation
 
 Actually question is not how to validate, but **how to show validation errors in a user friendly way**? 
@@ -106,7 +107,9 @@ private void submit() {
 ![image]({{site.baseurl}}/img/vitaliy/posts/android-form-validation-right-way/z-validations-not-in-range.png)
 Failed InRange validation
 
+
 ##### Useful links
+
 *(I'll update lists every time I find related topics)*
 
 - [Post about text input on d.android.com](http://developer.android.com/guide/topics/ui/controls/text.html)
