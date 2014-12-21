@@ -21,7 +21,7 @@ Recently I had a task to select what Android phones to buy to extend company’s
 If we’re talking about iOS, this question doesn’t make sense because all iPhones and iPads use PowerVR GPUs. But Android devices can be powered by [Adreno][adreno], [Tegra][tegra], [Mali][mali] or [PowerVR][povervr] GPUs. These differ in texture formats and how alpha is handled, and of course they all have different drivers and shader compilers. Unity documentation recommends using ETC texture compression, which is supported by all Android devices, is ‘safe’ and this is basically true, but in some cases ETC could not work the best or it’s possible to achieve better performance using other compression format adopted for certain GPU.
  
 
-#### Results of small market research I’ve made.
+#### Market research results
 
 According to statistics from [AppBrain][appbrain] for today the most popular Android phones are:
 
