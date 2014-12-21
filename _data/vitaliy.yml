@@ -17,13 +17,10 @@ facebook_image: ""
 
 # Navigation
 navigation:
- - {permalink: "/#home", text: "Home"}
- - {permalink: "/#about", text: "About me", class: "sub-nav", major: "/"}
- - {permalink: "/#focusing", text: "I’m focusing", class: "sub-nav", major: "/"}
- - {permalink: "/#past", text: "The past", class: "sub-nav", major: "/"}
- - {permalink: "/#contact", text: "Contact me", class: "sub-nav", major: "/"}
  - {permalink: "/blog/", text: "Blog"}
- - {permalink: "/me-on-web/", text: "Me on web"}
+ - {permalink: "/slides/", text: "Slides"}
+ - {permalink: "/projects/", text: "Projects"}
+ # - {permalink: "/about/", text: "About me", sub-navigation: ""}
 
 # Landing section
 welcome_text: "Hello, I'm Vitaliy"
@@ -46,7 +43,7 @@ focusing:
 
 # Work experience
 work_experience:
- - {period: "Sep 2012 - Present", company: "Nravo", position: "Team Lead, Game Developer", description: "Native client development for existing web-browser games, platforms Android, iOS. 3D games development using Unity3D engine."}
+ - {period: "Sep 2012 - Dec 2014", company: "Nravo", position: "Team Lead, Game Developer", description: "Native client development for existing web-browser games, platforms Android, iOS. 3D games development using Unity3D engine."}
  - {period: "Jun 2011 – Sep 2012", company: "EPAM Systems", position: "Java Developer", description: "Support of all providers integrations for one of the biggest online travel agency in Europe. Main responsibility was to fix problems as quickly as possible in a high quality level."}
  - {period: "Jan 2011 – Jun 2011", company: "Freelance", position: "Android developer", description: "Native client development for visitlviv.net website."}
 
@@ -56,4 +53,4 @@ contact_me: "Whether you have an interesting project or just want to say hi, fee
 # Blog
 images_folder: "/img/vitaliy/posts/"
 discus_short_name: "vzasadnyy"
-get_in_touch: "You can find me on <a href='https://www.google.com/+VitalikZasadnyy' target='_blank'>Google+</a>, <a href='http://twitter.com/zasadnyy' target='_blank'>Twitter</a> or <a href='https://www.facebook.com/zasadnyy' target='_blank'>Facebook</a>. If you want get me directly, please send me an <a href='mailto:vitaliy@zasadnyy.com' target='_blank'>email</a>."
+get_in_touch: "You can find me on <a href='https://www.google.com/+VitalikZasadnyy' target='_blank'>Google+</a>, <a href='http://twitter.com/zasadnyy' target='_blank'>Twitter</a> or <a href='https://www.linkedin.com/in/zasadnyy' target='_blank'>LinkedIn</a>. If you want get me directly, please send me an <a href='mailto:vitaliy@zasadnyy.com' target='_blank'>email</a>."

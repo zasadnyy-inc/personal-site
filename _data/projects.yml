@@ -1,0 +1,18 @@
+- 
+  title: "z-validations"
+  description: "Small library that helps with Android form validations"
+  projectPage: "https://github.com/zasadnyy/z-validations"
+  tags: ["android", "library"]
+  featured: true
+- 
+  title: "Eyes Exercises for SW2 and Android Wear"
+  description: "Simple app for your Sony SmartWatch 2 or Android Wear powered devices to improve your vision."
+  projectPage: "https://github.com/zasadnyy/vision-trainer-sw2"
+  tags: ["android wear", "sony smart watch"]
+  featured: true
+- 
+  title: "Project Zeppelin"
+  description: "Project Zeppelin allows you to setup awesome conference website in 5 minutes"
+  projectPage: "https://github.com/gdg-x/zeppelin"
+  tags: ["jekyll", "html5", "gdgx"]
+  featured: false

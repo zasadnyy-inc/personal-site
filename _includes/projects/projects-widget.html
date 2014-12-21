@@ -1,0 +1,16 @@
+<div class="projects-widget col-md-5 col-md-offset-1">
+    <h5 class="widget-title">Featured projects</h5>
+    <ul>
+        {% for item in site.data.projects reversed %}
+            {% if item.featured %}
+                <li class="project-item">
+                    <a href="{{ item.projectPage }}">
+                        <h6 class="project-title">{{ item.title }}</h6>
+                        <p class="project-details">{{ item.description | truncate: 50 }}</p>     
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <a class="side-link" href="{{ "/projects/" || prepend: site.baseurl }}">See all</a>
+</div>

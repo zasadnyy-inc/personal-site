@@ -1,0 +1,62 @@
+.project-item {
+  margin: 0px 0px 30px 0px;
+  list-style: none;
+  &:hover, &:active, &:focus {
+    .project-title {
+      color: lighten($header-color, $link-lighten-amount);
+    }
+    .project-details {
+      color: lighten($text-color, $link-lighten-amount);
+    }
+    .project-tags {
+      color: lighten($main-color-second, $link-lighten-amount);
+    }
+  }
+}
+.project-title {
+  color: $text-color;
+  line-height: 100%;
+  transition-property: color;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+.project-details {
+  font-size: $base-font-size;
+  color: $text-color;
+  margin: 0px 0px 5px 0px;
+  transition-property: color;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+.project-tags {
+  font-size: $base-font-size;
+  color: $main-color-second;
+  transition-property: color;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+.projects-list {
+  ul {
+    padding: 0;
+  }
+}
+.projects-widget {
+  ul {
+    padding: 0;
+    &:last-child { // FIXME: don't work
+      margin-bottom: 16px;
+    }
+  }
+  .side-link {
+    color: $main-color-second;
+  }
+  .widget-title {
+    margin-bottom: 24px;
+  }
+  .project-item {
+    margin: 16px 0px 24px 0px;
+  }
+  .project-title {
+    margin-bottom: 4px;
+  }
+}

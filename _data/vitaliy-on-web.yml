@@ -1,7 +1,0 @@
-block_title: "My stuff on the web"
-list:
- - {title: "How to make Unity work better on Maverickdnyy", source-name: "Nravo developers", link: "http://developers.nravo.com/how-to-make-unity-work-better-on-maverick/#.VIVrJtWUeVM", type: "article"}
- - {title: "Mastering Unity Project Folder Structure. Level 0 – Folders required for version control systems", source-name: "Nravo developers", link: "http://developers.nravo.com/mastering-unity-project-folder-structure-level-0-vcs/#.VIVrX9WUeVM", type: "article"}
- - {title: "Mastering Unity Project Folder Structure. Level 1 – Reserved Folders", source-name: "Nravo developers", link: "http://developers.nravo.com/mastering-unity-project-folder-structure-level-1-reserved-folders/#.VIVriNWUeVM", type: "article"}
- - {title: "Mastering Unity Project Folder Structure. Level 2 – Assets Organization", source-name: "Nravo developers", link: "http://developers.nravo.com/mastering-unity-project-folder-structure-level-2-assets-organization/#.VIVridWUeVM", type: "article"}
- - {title: "Best test devices for game development", source-name: "Nravo developers", link: "http://developers.nravo.com/best-test-devices-for-game-development/#.VIVrjtWUeVM", type: "article"}

@@ -23,22 +23,7 @@
     {% endfor %}
     </ul>
 </div>
+
 <hr class="visible-xs">
-<div class="on-web col-md-5 col-md-offset-1">
-    <h5>{{ site.data.vitaliy-on-web.block_title }}</h5>
-    <ul>
-    {% for item in site.data.vitaliy-on-web.list reversed limit:5 %}
-        <li class="on-web-item">
-            <a href="{{ item.link }}">
-                <h6 class="on-web-title">{{ item.title }}</h6>
-                <p class="on-web-detail">
-                    <span class="source-name">{{ item.source-name}}</span> 
-                    <span class="divider">//</span>
-                    <span class="type">{{ item.type }}</span>
-                </p>
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
-    <a class="side-link" href="{{ "/me-on-web/" || prepend: site.baseurl }}">See all</a>
-</div>
+
+{% include projects/projects-widget.html %}

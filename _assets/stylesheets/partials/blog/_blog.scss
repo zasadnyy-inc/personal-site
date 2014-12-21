@@ -40,9 +40,21 @@
 	}
 	.article-title {
 		color: $header-color;
+		transition-property: color;
+  	transition-duration: 0.2s;
+  	transition-timing-function: ease-in-out;
+	}
+	.article-intro {
+		color: $text-color;
+		transition-property: color;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
 	}
 	.categories {
 		color: $main-color-second;
+		transition-property: color;
+  	transition-duration: 0.2s;
+  	transition-timing-function: ease-in-out;
 	}
 }
 .article-item {
@@ -51,48 +63,15 @@
 	&:last-child {
 		margin: 0;
 	}
-}
-.article-intro {
-	color: $text-color;
-}
-
-.on-web {
-	ul {
-		padding: 0;
-	}
-	h5 {
-		color: $header-color;
-	}
-	.side-link {
-		color: $main-color-second;
-		margin-top: 20px;
-		display: block;
-	}
-}
-.on-web-item {
-	margin-top: 20px;
-	list-style: none;
-	&:last-child {
-		margin: 0;
-	}
-}
-.on-web-title {
-	color: $text-color;
-	margin-bottom: 0;
-	line-height: 100%;
-}
-.on-web-detail {
-	font-size: $base-font-size * 0.8;
-	color: $text-color;
-	text-transform: uppercase;
-	.source-name {
-		color: $main-color-second;
-		float: left;
-	}
-	.type {
-		color: $sub-color-second;
-	}
-	.divider {
-		margin-left: 4px;
+	&:hover, &:active, &:focus {
+		.article-title {
+			color: lighten($header-color, $link-lighten-amount);
+		}
+		.article-intro {
+			color: lighten($text-color, $link-lighten-amount);
+		}
+		.categories {
+			color: lighten($main-color-second, $link-lighten-amount);
+		}
 	}
 }

@@ -5,12 +5,10 @@
     <nav class="nav">
         <ul>
             {% for nav in site.data.vitaliy.navigation %}
-                {% if nav.major == null or nav.major == page.permalink %}
                 <li>
                     {% assign navlink = nav.permalink | prepend: site.baseurl %}
-                    <a class="nav-link {% if nav.permalink == page.permalink %}current{% endif %} {{ nav.class }}" href="{{ navlink }}" {% if nav.link %}target="_blank"{% endif %}>{{ nav.text }}</a>
+                    <a class="nav-link {% if nav.permalink == page.permalink %}current{% endif %}" href="{{ navlink }}" {% if nav.link %}target="_blank"{% endif %}>{{ nav.text }}</a>
                 </li>
-                {% endif %}
             {% endfor %}
         </ul>
     </nav>
